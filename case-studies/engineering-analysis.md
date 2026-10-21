@@ -4,6 +4,8 @@
 
 <img src="../assets/technologies-analysis.svg" alt="Technologies used: Python, Streamlit, Pydantic, pytest" width="1120" class="technology-row">
 
+**Domain knowledge:** AUTOSAR · ISO 26262/HARA · ISO 21434/TARA · MISRA C · ASPICE · CAN · UDS · Embedded/RTOS patterns
+
 **Goal: Make specialist engineering knowledge and structured problem-solving easier to access and apply.**
 
 13 specialist agents help organize embedded-software questions into clear investigations: what is known, what is missing and what to check next.

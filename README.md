@@ -55,6 +55,8 @@ These projects show how I work: connect software components, detect problems thr
 
 <img src="assets/technologies-analysis.svg" alt="Python, Streamlit, Pydantic, pytest" width="1120" class="technology-row">
 
+**Domain knowledge:** AUTOSAR · ISO 26262/HARA · ISO 21434/TARA · MISRA C · ASPICE · CAN · UDS · Embedded/RTOS patterns
+
 **Problem:** Broad engineering advice is hard to act on without the facts, missing data and a concrete verification plan.
 
 **My contribution:** Developed 13 specialist agents with eight knowledge packs, domain routing, structured investigations and targeted validation.
