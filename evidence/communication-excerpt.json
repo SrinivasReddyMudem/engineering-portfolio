@@ -1,0 +1,175 @@
+{
+  "schema_version": "public-evidence-excerpt/1.0",
+  "origin": "recorded_c_execution_excerpt_not_new_execution",
+  "original_recording_sha256": "d269a1eaa59c7f1838ea0abfeec27f60e4ad95783019d7973fd49a8f76dd412e",
+  "source_revision": "23fa0d2e28945609d0811dc6dd1a1cbdfe43d710",
+  "upstream_revision": "5593428d95af10dde1e565cebcda16089fc74857",
+  "compiler": "GNU 13.3.0",
+  "input_payload": [
+    72,
+    69,
+    76,
+    76,
+    79
+  ],
+  "received_payload": [
+    72,
+    69,
+    76,
+    76,
+    79
+  ],
+  "frames": [
+    {
+      "sequence": 1,
+      "time_ms": 0,
+      "source": 0,
+      "destination": 1,
+      "can_id": 1792,
+      "action": "delivered",
+      "delivery_result": 0,
+      "bytes": [
+        5,
+        72,
+        69,
+        76,
+        76,
+        79,
+        0,
+        0
+      ],
+      "original_bytes": [
+        5,
+        72,
+        69,
+        76,
+        76,
+        79,
+        0,
+        0
+      ]
+    }
+  ],
+  "assertions": [
+    {
+      "id": "init.1",
+      "description": "Two endpoints initialize",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "id": "independent_buffers.2",
+      "description": "Endpoint RX arrays are independent",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "id": "send_return.3",
+      "description": "Sending is accepted",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "id": "peer_route.4",
+      "description": "Frame is addressed to opposite ECU",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "id": "can_id.5",
+      "description": "Frame ID matches source ECU",
+      "expected": 1792,
+      "actual": 1792,
+      "passed": true
+    },
+    {
+      "id": "delivery_return.6",
+      "description": "Adapter accepts frame delivery",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "id": "drain.7",
+      "description": "Queued frames delivered",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "id": "completion.8",
+      "description": "Transfer completes within bounded steps",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "id": "receive_return.9",
+      "description": "ECU B receives complete message",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "id": "payload_length.10",
+      "description": "ECU B length matches input",
+      "expected": 5,
+      "actual": 5,
+      "passed": true
+    },
+    {
+      "id": "payload_equal.11",
+      "description": "ECU B payload equals input byte for byte",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "id": "receiver_protocol_ok.12",
+      "description": "Receiver protocol result is OK",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "id": "sender_protocol_ok.13",
+      "description": "Sender protocol result is OK",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "id": "one_frame.14",
+      "description": "Exactly one CAN frame emitted",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "id": "sf_type.15",
+      "description": "Observed frame is SF",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "id": "no_loopback.16",
+      "description": "Sender received no own frame",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "id": "recording_bounds.17",
+      "description": "All evidence fit recorder capacity",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    }
+  ],
+  "verdict": "PASS"
+}

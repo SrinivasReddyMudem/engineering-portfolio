@@ -1,0 +1,19 @@
+{
+  "schema_version": "public-export/1.0",
+  "kind": "curated_derived_export_not_original_archive",
+  "original_junit_sha256": "7eda8db8be96205e87a4ca319d9bbf5b108011174400598a737a662890b7243d",
+  "public_junit_sha256": "8d0c598f62d4c8e1d92924745a221960360c410876af522ab859714743da345e",
+  "original_communication_recording_sha256": "d269a1eaa59c7f1838ea0abfeec27f60e4ad95783019d7973fd49a8f76dd412e",
+  "original_fault_recording_sha256": "8bf64da0d83ee949d18a95a399456f2024d7c33750a47c412466b7f9fecdf75d",
+  "original_recovery_summary_sha256": "d0f38c842fd678174c3a40e61f0059921483d6d0af81d05ad92875276533066c",
+  "redactions": [
+    "JUnit hostname and file attributes",
+    "communication execution paths, binary metadata and artifact paths omitted"
+  ],
+  "test_counts": {
+    "agent": 363,
+    "calculator": 78,
+    "passed": 441
+  },
+  "model_inference": "NOT_EXECUTED"
+}

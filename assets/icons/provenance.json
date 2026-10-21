@@ -1,0 +1,47 @@
+{
+  "project": "Simple Icons",
+  "revision": "ed9a5192b24ad2f169bf1009931da0df27d5a49a",
+  "licence": "CC0-1.0",
+  "files": {
+    "git.svg": {
+      "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/ed9a5192b24ad2f169bf1009931da0df27d5a49a/icons/git.svg",
+      "sha256": "95724d436215d483de82288610c3c144854138f49945424697fcdf8be66e17d6"
+    },
+    "docker.svg": {
+      "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/ed9a5192b24ad2f169bf1009931da0df27d5a49a/icons/docker.svg",
+      "sha256": "65571291c261ef869c31540a38f3ca0f0ee3bb73f179c172211c8860f19a6359"
+    },
+    "cmake.svg": {
+      "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/ed9a5192b24ad2f169bf1009931da0df27d5a49a/icons/cmake.svg",
+      "sha256": "06757bccadf0459aca0a4c6a3898bd58e2dd71ea552bf7058cd406adc32fefa9"
+    },
+    "gnu.svg": {
+      "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/ed9a5192b24ad2f169bf1009931da0df27d5a49a/icons/gnu.svg",
+      "sha256": "24a8ccdc9e076463d3162309ddf6db5ded394c109ca9d8ece9709a339894f21e"
+    },
+    "python.svg": {
+      "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/ed9a5192b24ad2f169bf1009931da0df27d5a49a/icons/python.svg",
+      "sha256": "ad9468e1c4903f73ae7eebfbe980f0f727a10db695be3d914e7d8bd25356a862"
+    },
+    "c.svg": {
+      "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/ed9a5192b24ad2f169bf1009931da0df27d5a49a/icons/c.svg",
+      "sha256": "fde4284070eedf24f3acc2f78368b8c25a204f9a1b8831caaae4652c3e716c88"
+    },
+    "jenkins.svg": {
+      "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/ed9a5192b24ad2f169bf1009931da0df27d5a49a/icons/jenkins.svg",
+      "sha256": "95ab5d541710c116d939f44e4e72c8b1503e78d04a1c298ad257c4e26d3a1873"
+    },
+    "linux.svg": {
+      "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/ed9a5192b24ad2f169bf1009931da0df27d5a49a/icons/linux.svg",
+      "sha256": "7e55f2779ae11a83c9dad2d0414a65d8ca7867d0716ce58bfe41ed299ae1447f"
+    },
+    "streamlit.svg": {
+      "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/ed9a5192b24ad2f169bf1009931da0df27d5a49a/icons/streamlit.svg",
+      "sha256": "6ddd015a8dcbee723bbf5cbacad704190a59f01e25dd2984d1ef1909ec1d2b8f"
+    },
+    "pytest.svg": {
+      "url": "https://raw.githubusercontent.com/simple-icons/simple-icons/ed9a5192b24ad2f169bf1009931da0df27d5a49a/icons/pytest.svg",
+      "sha256": "ed36ea71c97a34c714a9b6e0ecbd8ebf8215bd4145d9d68dda171b3f97dc64d7"
+    }
+  }
+}

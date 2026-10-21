@@ -1,0 +1,65 @@
+{
+  "origin": "validated_recorded_jenkins_evidence",
+  "model_inference": "NOT_EXECUTED",
+  "runs": {
+    "green": {
+      "source_commit": "7c8505541580c93697dfbcec09662b89e0edffa2",
+      "counts": {
+        "expected": 10,
+        "reported": 10,
+        "executed": 10,
+        "passed": 10,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "not_run": 0
+      }
+    },
+    "red": {
+      "source_commit": "2988a4d50901ce0b640e94f5b5b08e366615ebce",
+      "counts": {
+        "expected": 10,
+        "reported": 10,
+        "executed": 10,
+        "passed": 7,
+        "failed": 3,
+        "errors": 0,
+        "skipped": 0,
+        "not_run": 0
+      }
+    },
+    "recovery": {
+      "source_commit": "1f343d0d212e9140665b6f7213ba2acb7475b318",
+      "counts": {
+        "expected": 10,
+        "reported": 10,
+        "executed": 10,
+        "passed": 10,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "not_run": 0
+      }
+    }
+  },
+  "failures": [
+    {
+      "capacity": 2,
+      "line": 67,
+      "expected": -42,
+      "actual": 0
+    },
+    {
+      "capacity": 2,
+      "line": 98,
+      "expected": -42,
+      "actual": 0
+    },
+    {
+      "capacity": 4,
+      "line": 98,
+      "expected": -42,
+      "actual": 0
+    }
+  ]
+}

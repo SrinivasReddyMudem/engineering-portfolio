@@ -1,0 +1,375 @@
+{
+  "schema_version": "public-evidence-excerpt/1.0",
+  "origin": "recorded_c_execution_excerpt_not_new_execution",
+  "scenario_id": "missing_fc",
+  "original_recording_sha256": "8bf64da0d83ee949d18a95a399456f2024d7c33750a47c412466b7f9fecdf75d",
+  "source_revision": "23fa0d2e28945609d0811dc6dd1a1cbdfe43d710",
+  "upstream_revision": "5593428d95af10dde1e565cebcda16089fc74857",
+  "compiler": "GNU 13.3.0",
+  "inputs": {
+    "payload": [
+      72,
+      101,
+      108,
+      108,
+      111,
+      32,
+      102,
+      114,
+      111,
+      109,
+      32,
+      69,
+      67,
+      85,
+      32,
+      65
+    ],
+    "peer_payload": []
+  },
+  "actual": {
+    "simulated_end_ms": 101,
+    "frames_emitted": 2,
+    "received_a": [],
+    "received_b": []
+  },
+  "frames": [
+    {
+      "sequence": 1,
+      "time_ms": 0,
+      "source": 0,
+      "destination": 1,
+      "can_id": 1792,
+      "action": "delivered",
+      "delivery_result": 0,
+      "bytes": [
+        16,
+        16,
+        72,
+        101,
+        108,
+        108,
+        111,
+        32
+      ],
+      "original_bytes": [
+        16,
+        16,
+        72,
+        101,
+        108,
+        108,
+        111,
+        32
+      ]
+    },
+    {
+      "sequence": 2,
+      "time_ms": 0,
+      "source": 1,
+      "destination": 0,
+      "can_id": 1793,
+      "action": "dropped",
+      "delivery_result": null,
+      "bytes": [
+        48,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "original_bytes": [
+        48,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "events": [
+    {
+      "time_ms": 0,
+      "operation": "initialize",
+      "endpoint": 0,
+      "return_code": 0,
+      "send_status": [
+        0,
+        0
+      ],
+      "receive_status": [
+        0,
+        0
+      ],
+      "send_protocol_result": [
+        0,
+        0
+      ],
+      "receive_protocol_result": [
+        0,
+        0
+      ]
+    },
+    {
+      "time_ms": 0,
+      "operation": "send",
+      "endpoint": 0,
+      "return_code": 0,
+      "send_status": [
+        1,
+        0
+      ],
+      "receive_status": [
+        0,
+        0
+      ],
+      "send_protocol_result": [
+        0,
+        0
+      ],
+      "receive_protocol_result": [
+        0,
+        0
+      ]
+    },
+    {
+      "time_ms": 0,
+      "operation": "deliver_frame",
+      "endpoint": 1,
+      "return_code": 0,
+      "send_status": [
+        1,
+        0
+      ],
+      "receive_status": [
+        0,
+        1
+      ],
+      "send_protocol_result": [
+        0,
+        0
+      ],
+      "receive_protocol_result": [
+        0,
+        0
+      ]
+    },
+    {
+      "time_ms": 0,
+      "operation": "drop_frame",
+      "endpoint": 0,
+      "return_code": 0,
+      "send_status": [
+        1,
+        0
+      ],
+      "receive_status": [
+        0,
+        1
+      ],
+      "send_protocol_result": [
+        0,
+        0
+      ],
+      "receive_protocol_result": [
+        0,
+        0
+      ]
+    },
+    {
+      "time_ms": 100,
+      "operation": "poll",
+      "endpoint": 0,
+      "return_code": 0,
+      "send_status": [
+        1,
+        0
+      ],
+      "receive_status": [
+        0,
+        1
+      ],
+      "send_protocol_result": [
+        0,
+        0
+      ],
+      "receive_protocol_result": [
+        0,
+        0
+      ]
+    },
+    {
+      "time_ms": 101,
+      "operation": "poll",
+      "endpoint": 0,
+      "return_code": 0,
+      "send_status": [
+        2,
+        0
+      ],
+      "receive_status": [
+        0,
+        1
+      ],
+      "send_protocol_result": [
+        -2,
+        0
+      ],
+      "receive_protocol_result": [
+        0,
+        0
+      ]
+    },
+    {
+      "time_ms": 101,
+      "operation": "receive",
+      "endpoint": 1,
+      "return_code": -5,
+      "send_status": [
+        2,
+        0
+      ],
+      "receive_status": [
+        0,
+        1
+      ],
+      "send_protocol_result": [
+        -2,
+        0
+      ],
+      "receive_protocol_result": [
+        0,
+        0
+      ]
+    }
+  ],
+  "assertions": [
+    {
+      "id": "init.1",
+      "description": "Two endpoints initialize",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "id": "independent_buffers.2",
+      "description": "Endpoint RX arrays are independent",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "id": "send_return.3",
+      "description": "Sending is accepted",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "id": "peer_route.4",
+      "description": "Frame is addressed to opposite ECU",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "id": "can_id.5",
+      "description": "Frame ID matches source ECU",
+      "expected": 1792,
+      "actual": 1792,
+      "passed": true
+    },
+    {
+      "id": "delivery_return.6",
+      "description": "Adapter accepts frame delivery",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "id": "fc_queued.7",
+      "description": "Receiver queued one FC",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "id": "fc_type.8",
+      "description": "Queued frame is flow control",
+      "expected": 3,
+      "actual": 3,
+      "passed": true
+    },
+    {
+      "id": "peer_route.9",
+      "description": "Frame is addressed to opposite ECU",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "id": "can_id.10",
+      "description": "Frame ID matches source ECU",
+      "expected": 1793,
+      "actual": 1793,
+      "passed": true
+    },
+    {
+      "id": "clock_return.11",
+      "description": "Injected time is accepted",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "id": "deadline_pending.12",
+      "description": "Sender still waits at 100 ms",
+      "expected": 1,
+      "actual": 1,
+      "passed": true
+    },
+    {
+      "id": "clock_return.13",
+      "description": "Injected time is accepted",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    },
+    {
+      "id": "timeout_status.14",
+      "description": "Sender reports ERROR at 101 ms",
+      "expected": 2,
+      "actual": 2,
+      "passed": true
+    },
+    {
+      "id": "timeout_result.15",
+      "description": "Missing FC produces TIMEOUT_BS",
+      "expected": -2,
+      "actual": -2,
+      "passed": true
+    },
+    {
+      "id": "no_partial_data.16",
+      "description": "Application receives no partial message",
+      "expected": -5,
+      "actual": -5,
+      "passed": true
+    },
+    {
+      "id": "recording_bounds.17",
+      "description": "All evidence fit recorder capacity",
+      "expected": 0,
+      "actual": 0,
+      "passed": true
+    }
+  ],
+  "verdict": "EXPECTED_FAULT",
+  "expected_fault_detected": true
+}

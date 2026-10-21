@@ -1,0 +1,79 @@
+{
+  "kind": "SOURCE_AND_ROUTING_REVIEW_NOT_MODEL_INFERENCE",
+  "source_files": {
+    "README.md": "df07a4d9c10a53e217042208dfa21c83aa60aa4dc1137d314a933992369ad176",
+    "sdk_agents\\app.py": "1aedfd019c5f9e19eb1e41ffb2147f1a9545f571b0c5667a93490befad8259bd",
+    "sdk_agents\\core\\registry.py": "73a532b04a25ebfa59aa4e52be61f78f3ddffee37f0a4aa6b0c97fb64afbd1ff",
+    "sdk_agents\\core\\shared_schema.py": "7dd94b965594d2fad509f05d69851b02ee4bc9786f22904eeb11fa701da0e4f5",
+    "sdk_agents\\core\\base_agent.py": "148a3416dd7297ccb3b4019bd4a801bd77815c8035d41c43131c82ea995fc06a",
+    "sdk_agents\\integrator\\can_bus_analyst\\validators.py": "21b05d6243c5cbd2ee05eba27edfb3ca2882e2160aca287135ab491304aff550",
+    "sdk_agents\\project_lead\\sw_project_lead\\validators.py": "7784c9850b64987455473a584fcdbbf4ac1aae32f47aa7e0ac40bf6be5472b23"
+  },
+  "agents": 13,
+  "knowledge_packs": 8,
+  "routing_checks": [
+    {
+      "prompt": "CAN node goes bus-off after 3 minutes, only when engine running. Other nodes are fine.",
+      "expected_primary": "can-bus-analyst",
+      "actual_primary": "can-bus-analyst",
+      "additional_relevant_agents": [],
+      "result": "PASS"
+    },
+    {
+      "prompt": "Hard fault on Cortex-M4, CFSR = 0x00000400.",
+      "expected_primary": "embedded-c-developer",
+      "actual_primary": "embedded-c-developer",
+      "additional_relevant_agents": [],
+      "result": "PASS"
+    },
+    {
+      "prompt": "Customer added OTA update requirement at Milestone 3. Assess schedule impact and change request options.",
+      "expected_primary": "sw-project-lead",
+      "actual_primary": "sw-project-lead",
+      "additional_relevant_agents": [],
+      "result": "PASS"
+    },
+    {
+      "prompt": "After SW baseline 2.4, 14 tests failed that passed in 2.3.",
+      "expected_primary": "regression-analyst",
+      "actual_primary": "sw-integrator",
+      "additional_relevant_agents": [],
+      "result": "UNEXPECTED_ROUTING"
+    },
+    {
+      "prompt": "Regression analysis: test delta and new test failures after a baseline change.",
+      "expected_primary": "regression-analyst",
+      "actual_primary": "regression-analyst",
+      "additional_relevant_agents": [],
+      "result": "PASS"
+    }
+  ],
+  "provider_calls": 0,
+  "original_files_modified": false,
+  "public_landing_page": "rendered_in_fresh_headless_browser_without_prompt_submission",
+  "risk_validator_checks": [
+    {
+      "fixture_origin": "authored_local_input_not_model_output",
+      "probability": 3,
+      "impact": 4,
+      "supplied_score": 12,
+      "expected_score": 12,
+      "expected_validation": "ACCEPTED",
+      "actual_validation": "ACCEPTED",
+      "message": null,
+      "result": "PASS"
+    },
+    {
+      "fixture_origin": "authored_local_input_not_model_output",
+      "probability": 3,
+      "impact": 4,
+      "supplied_score": 11,
+      "expected_score": 12,
+      "expected_validation": "REJECTED",
+      "actual_validation": "REJECTED",
+      "message": "risks[0].risk_score=11 does not match probability(3) x impact(4) = 12. Risk score must equal P × I.",
+      "result": "PASS"
+    }
+  ],
+  "validation_execution_scope": "Only source-extracted routing and risk-check functions; no app imports, secrets, provider clients or model execution."
+}
