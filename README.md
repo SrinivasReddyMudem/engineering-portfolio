@@ -101,6 +101,6 @@ The agent knowledge packs include MISRA, ISO 26262, ASPICE and cybersecurity top
 
 Live local demonstrations of embedded communication, build/test verification and fault investigation are available on request.
 
-Implementation repositories remain private. These portfolio examples demonstrate software behavior; they do not claim physical hardware validation.
+Communication and build-platform implementation repositories remain private. The [AI Agents source repository](https://github.com/SrinivasReddyMudem/automotive-lifecycle-agents) is public. These examples demonstrate software behavior, not physical hardware validation.
 
 [Connect on LinkedIn](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)
