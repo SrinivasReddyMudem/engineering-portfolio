@@ -48,7 +48,7 @@
         "expected": -42,
         "actual": 0,
         "raw_zephyr": null,
-        "trace": "/home/sredd/engineering-portfolio/builds/zephyr-stage3/jenkins-build-3/results/twister/native_sim_native_64/host_gnu/work/zephyr-builds/3/source/zephyr-app/portfolio.queue.capacity2/handler.log",
+        "trace": "jenkins-build-3/results/twister/native_sim_native_64/host_gnu/work/zephyr-builds/3/source/zephyr-app/portfolio.queue.capacity2/handler.log",
         "trace_text": "OFFER index=2 expected=-42 actual=0"
       },
       "source": {
@@ -76,7 +76,7 @@
         "expected": -42,
         "actual": 0,
         "raw_zephyr": -42,
-        "trace": "/home/sredd/engineering-portfolio/builds/zephyr-stage3/jenkins-build-3/results/twister/native_sim_native_64/host_gnu/work/zephyr-builds/3/source/zephyr-app/portfolio.queue.capacity2/handler.log",
+        "trace": "jenkins-build-3/results/twister/native_sim_native_64/host_gnu/work/zephyr-builds/3/source/zephyr-app/portfolio.queue.capacity2/handler.log",
         "trace_text": "FULL expected=-42 raw=-42 adapter=0"
       },
       "source": {
@@ -104,7 +104,7 @@
         "expected": -42,
         "actual": 0,
         "raw_zephyr": -42,
-        "trace": "/home/sredd/engineering-portfolio/builds/zephyr-stage3/jenkins-build-3/results/twister/native_sim_native_64/host_gnu/work/zephyr-builds/3/source/zephyr-app/portfolio.queue.capacity4/handler.log",
+        "trace": "jenkins-build-3/results/twister/native_sim_native_64/host_gnu/work/zephyr-builds/3/source/zephyr-app/portfolio.queue.capacity4/handler.log",
         "trace_text": "FULL expected=-42 raw=-42 adapter=0"
       },
       "source": {
@@ -139,5 +139,12 @@
     "This diagnosis recognizes the controlled error-translation defect only; unsupported evidence fails closed."
   ],
   "schema_version": "source-linked-review-excerpt/1.0",
-  "original_review_sha256": "2aa33a799206eb81a6f4becedf79599f95cac59316c5612e4936a96c17c68bbc"
+  "original_review_sha256": "2aa33a799206eb81a6f4becedf79599f95cac59316c5612e4936a96c17c68bbc",
+  "public_export": {
+    "schema_version": "1.0",
+    "original_excerpt_sha256": "a18f6bb5fb5c3d3de06ed35d434ec3022701e52f0550e95dfab260c3088f3027",
+    "normalization": "Three absolute trace locations replaced with portable artifact references relative to the Jenkins build archive parent.",
+    "engineering_values_and_evidence_ids_unchanged": true,
+    "original_reports_unchanged": true
+  }
 }
