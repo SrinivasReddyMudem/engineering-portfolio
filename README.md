@@ -7,80 +7,100 @@
 
 **I'm Srinivas Reddy Mudem, with 11+ years of embedded software experience spanning C/C++ development, integration and software project leadership.**
 
-I develop and debug embedded systems, explain difficult technical issues and help teams turn problems into verified solutions.
-
-These projects show how I work: connect software components, detect problems through automated tests, and explain the findings so the next engineering decision is clear.
-
-[Explore communication](case-studies/embedded-communication.md) | [See fault detection and recovery](case-studies/failure-to-recovery.md) | [Explore specialist AI agents](case-studies/engineering-analysis.md)
+**Explore:** [Verified communication](case-studies/embedded-communication.md) · [Defect detection & recovery](case-studies/failure-to-recovery.md) · [Engineering analysis](case-studies/engineering-analysis.md)
 
 ## See the engineering in action
 
-### 1. Make software components communicate
+### 1. Embedded Communication & Diagnostics
 
 [![Embedded Communication and Diagnostics](assets/project-embedded.svg)](case-studies/embedded-communication.md)
 
-<img src="assets/technologies-embedded.svg" alt="C, ISO-TP/CAN, GCC/Clang, CMake/CTest, Python/pytest" width="1120" class="technology-row">
+<img src="assets/technologies-embedded.svg" alt="C, ISO-TP/CAN, GCC/Clang, CMake/CTest, Python/pytest" width="1120">
 
-**Problem:** Prove that the receiving software reconstructs the message correctly.
+Can the receiving software reconstruct exactly what the sender transmitted?
 
-**My contribution:** Integrated existing C ISO-TP components with host tests, fault scenarios and frame visualization.
+**Verified: 5/5 application bytes matched · 1 frame · 17/17 behavioral assertions passed.**
 
-**Verified result:** Recorded C execution sent and received the same five HELLO bytes. The recorded frame trace and assertions confirm the transfer.
+#### Skills
 
-**Capability demonstrated:** Embedded integration, protocol debugging and repeatable verification.
+C development · Software integration · Protocol debugging · Issue investigation · Automated testing · Technical demonstrations
 
+[![Recorded HELLO demonstration: input, Send, observed frame movement and verified reception at ECU B](assets/communication-demo.gif)](case-studies/embedded-communication.md#watch-a-recorded-hello-transfer)
 
-**[Inspect transfer evidence →](case-studies/embedded-communication.md)** | [Request live local demo ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)
+I integrated an existing C ISO-TP implementation with two host endpoints, deterministic verification, frame tracing and controlled fault scenarios.
 
-### 2. Detect a defect and verify the repair
+*Recorded local C execution. The animation replays observed frames; it is not physical CAN traffic or browser-side C execution.*
+
+**[Inspect communication case study and evidence →](case-studies/embedded-communication.md)**
+
+### 2. Embedded Build Reliability
 
 [![Embedded Build Reliability](assets/project-reliability.svg)](case-studies/failure-to-recovery.md)
 
-<img src="assets/technologies-reliability.svg" alt="Jenkins, Docker, Git, Python, CMake/GCC, Zephyr RTOS, Twister/Ztest" width="1120" class="technology-row">
+<img src="assets/technologies-reliability.svg" alt="Jenkins, Docker, Git, Python, CMake/GCC, Zephyr RTOS, Twister/Ztest" width="1120">
 
-**Problem:** Code can compile successfully but return the wrong result.
+The code compiled successfully. Behavioral tests still caught the defect.
 
-**My contribution:** Built isolated Jenkins/Docker/Zephyr verification with source-linked test evidence.
+[![Recorded Jenkins verification: baseline 10/10 passed; injected defect 7 passed and 3 failed; recovery 10/10 passed](assets/jenkins-verification.svg)](case-studies/failure-to-recovery.md#recorded-jenkins-verification)
 
-**Verified result:** The injected defect triggered three failed assertions. After repair, unchanged tests passed 10/10 in recorded Jenkins executions.
+**Green: 10/10 passed → Red: 7 passed, 3 failed → Recovery: 10/10 passed.**
 
-**Capability demonstrated:** Reproducible fault detection, CI/CD quality gates and verified recovery.
+#### Skills
 
+Build automation · CI/CD integration · Failure investigation · Regression testing · Recovery verification · Technical reporting
 
-**[Inspect failure and recovery →](case-studies/failure-to-recovery.md)** | [Request live local demo ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)
+I integrated Zephyr RTOS verification into an isolated Jenkins/Docker workflow with controlled defect injection and source-linked test evidence.
 
-### 3. Make engineering analysis easier to review
+*Recorded Jenkins executions; ten test executions across two queue configurations. The same assertions verified recovery.*
+
+**[Inspect detected defect and verified recovery →](case-studies/failure-to-recovery.md)**
+
+<details>
+<summary>Separate local Change & Verify demonstration — static preview</summary>
+
+[![Recorded local verification: successful source preparation, failed behavioral tests and rejected local quality gate](assets/local-verification-preview.png)](case-studies/failure-to-recovery.md#watch-the-defect-detection-and-recovery)
+
+This preview comes from the separately verified local Docker/Twister demonstration. It is not a Jenkins run. Compilation succeeded, three behavioral assertions failed, and the local quality gate rejected the injected defect. A subsequent local repair passed all ten tests.
+
+[Inspect the distinction between recorded Jenkins and local verification](case-studies/failure-to-recovery.md#recorded-jenkins-versus-live-local-demonstration). A guided local demonstration is available on request.
+
+</details>
+
+### 3. Domain-Specific AI Agents
 
 [![Domain-Specific AI Agents](assets/project-analysis.svg)](case-studies/engineering-analysis.md)
 
-<img src="assets/technologies-analysis.svg" alt="Python, Streamlit, Pydantic, pytest" width="1120" class="technology-row">
+<img src="assets/technologies-analysis.svg" alt="Python, Streamlit, Pydantic, pytest" width="1120">
 
-**Domain knowledge:** AUTOSAR · ISO 26262/HARA · ISO 21434/TARA · MISRA C · ASPICE · CAN · UDS · Embedded/RTOS patterns
+Turn an engineering question into a structured, reviewable investigation.
 
-**Problem:** Broad engineering advice is hard to act on without the facts, missing data and a concrete verification plan.
+#### Skills
 
-**My contribution:** Developed 13 specialist agents with eight knowledge packs, domain routing, structured investigations and targeted validation.
+Python development · Structured analysis · Investigation planning · Response validation · Evidence traceability · Technical guidance
 
-**Verified result:** 363 agent checks and 78 calculator checks passed offline. The public app supports specialist engineering questions; a separate isolated extension connects real test failures to source-linked evidence.
+**Question:** CAN node goes bus-off after three minutes, only when the engine is running.
 
-**Capability demonstrated:** Domain-focused assistance, reviewable analysis and evidence traceability.
+| Part of the investigation | Example |
+| --- | --- |
+| Known | Engine-dependent bus-off symptom |
+| Missing | Error counters, frame traces and electrical measurements |
+| Next checks | Capture CAN errors and investigate signal integrity under the triggering conditions |
 
+*Illustrative summary of an existing application example—not a new model execution or verified diagnosis. Engine dependence alone cannot rule out software.*
 
-**[▶ Try live AI Agents](https://automotive-skilled-ai-agents.streamlit.app/)** | [Inspect agent validation →](case-studies/engineering-analysis.md)
+I developed **13 specialist engineering agents and eight domain knowledge packs**, with structured response contracts, specialist routing and targeted validators.
 
-## Evidence behind the examples
+**441/441 offline software checks passed:** 363 agent checks and 78 calculator checks, using mocked provider responses. This is software verification, not a live model-accuracy benchmark.
 
-<p><a href="case-studies/agent-test-evidence.md"><img src="assets/proof-execution.svg" alt="441 tests passed: Offline agent and calculator test suites" width="32%"></a> <a href="case-studies/failure-to-recovery.md"><img src="assets/proof-recovery.svg" alt="Repair verified: The same tests confirm the repair" width="32%"></a> <a href="case-studies/engineering-analysis.md"><img src="assets/proof-agents.svg" alt="13 specialist agents: Development, testing, integration and leads" width="32%"></a></p>
+**[▶ Try the public AI Agents app](https://automotive-skilled-ai-agents.streamlit.app/)** · [Inspect the case study and validation →](case-studies/engineering-analysis.md)
 
-[Inspect the 441 passing offline tests](case-studies/agent-test-evidence.md): 363 agent checks and 78 calculator checks. This count is specific to those suites; it does not measure every AI answer or combine all three projects.
+A [separate deterministic evidence extension](case-studies/engineering-analysis.md#follow-the-evidence-from-failure-to-recovery) links recorded test failures to exact assertions, source revisions and verified recovery. That workflow does not perform model inference.
 
-## The engineering approach connecting the work
+## How the results are verified
 
-| Build on proven software | Investigate the exact failure | Verify before accepting a fix |
-| --- | --- | --- |
-| Reuse existing components and preserve their attribution | Compare expected and actual behavior, then inspect the related code | Run the unchanged checks and retain source-linked results |
+The demonstrations use retained execution records, unchanged regression checks and source-linked evidence. Recorded Jenkins results, local C demonstrations and offline AI software tests are separate verification activities. The ISO-TP communication and Zephyr queue workloads are separate implementations.
 
-The automotive communication workload and Zephyr queue workload are separate implementations. They demonstrate a shared engineering approach, not one combined runtime.
+**My engineering approach:** Reuse proven components, reproduce failures, compare expected and actual behavior, verify repairs and preserve traceable results.
 
 <details>
 <summary>Full toolkit and standards context</summary>
@@ -95,12 +115,10 @@ The agent knowledge packs include MISRA, ISO 26262, ASPICE and cybersecurity top
 
 </details>
 
-## Live demo & contact
+## Live demonstrations & contact
 
-**Try it yourself:** [Open the Domain-Specific AI Agents live demo](https://automotive-skilled-ai-agents.streamlit.app/).
-
-Live local demonstrations of embedded communication, build/test verification and fault investigation are available on request.
+The [public AI Agents application](https://automotive-skilled-ai-agents.streamlit.app/) is available to explore. Live local demonstrations of embedded communication, build/test verification and fault investigation are available on request.
 
 Communication and build-platform implementation repositories remain private. The [AI Agents source repository](https://github.com/SrinivasReddyMudem/automotive-lifecycle-agents) is public. These examples demonstrate software behavior, not physical hardware validation.
 
-[Connect on LinkedIn](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)
+**[Connect on LinkedIn →](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)**

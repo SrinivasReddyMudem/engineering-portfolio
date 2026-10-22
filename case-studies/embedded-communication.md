@@ -1,8 +1,14 @@
+[← Back to Engineering Portfolio](../README.md)
+
+*Engineering Portfolio / Case Study 01 of 03 · Embedded Communication*
+
 # Embedded Communication & Diagnostics
 
 <img src="../assets/project-embedded-identity.svg" alt="Embedded Communication and Diagnostics - C integration and repeatable verification" width="1120" class="project-card">
 
 <img src="../assets/technologies-embedded.svg" alt="Technologies used: C, ISO-TP/CAN, GCC/Clang, CMake/CTest, Python/pytest" width="1120" class="technology-row">
+
+**[▶ Watch the recorded HELLO transfer](#watch-a-recorded-hello-transfer)**
 
 A successful send operation does not prove that the receiver reconstructed the correct application message. This project uses repeatable C tests to inspect the actual frames, received bytes and supported fault behavior.
 
@@ -96,4 +102,8 @@ The HELLO recording demonstrates the stated single-frame transfer, not every seg
 
 The visual is derived from recorded execution evidence, not a screenshot. The demonstration uses host-executed C software and does not claim physical ECU validation.
 
-[Inspect communication evidence →](../evidence/communication-excerpt.json) | [Request live local demo ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/) | [← Back to profile](../README.md)
+[Inspect communication evidence →](../evidence/communication-excerpt.json) · [Request live local demo ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)
+
+---
+
+**[Next: Embedded Build Reliability →](failure-to-recovery.md)** · [← Back to Engineering Portfolio](../README.md) · [Connect on LinkedIn ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)

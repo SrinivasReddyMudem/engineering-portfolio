@@ -1,0 +1,286 @@
+{
+  "red": {
+    "run_id": "12e24c9cb5c14f77b688a99939ff2544",
+    "status": "BEHAVIORAL_FAIL",
+    "counts": {
+      "executed": 10,
+      "passed": 7,
+      "failed": 3
+    },
+    "process_exit_code": 1,
+    "execution_seconds": 67.62695798100003,
+    "verified_artifact_hashes": 888,
+    "image_id": "sha256:9690024bfce34b2cca3032d751b58349c0c8627f6cac5ad71da58208bb2c3267",
+    "source_sha256": {
+      "zephyr-app/CMakeLists.txt": "1ea86df33c660ebf5405f7126dc147652580c866b47ab7b99f4b2bd322e44618",
+      "zephyr-app/Kconfig": "33075df2406670305ee99c5995ee98de11c55cc27c278eb5498ef947642c0b5f",
+      "zephyr-app/LICENSE": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "zephyr-app/configs/capacity2.conf": "fd2841645cbd0b997f95eb3815e03c5616b351c2d5159917829843cbb325e6f3",
+      "zephyr-app/configs/capacity4.conf": "b5ee69bcd9cccdf3e2381f8325dd63727c64f1a1e26afb0b6c752308f1fea3f0",
+      "zephyr-app/prj.conf": "1bf84cd4f73d288baa379e1779ab96ee462766dd12b9f1a10eecaa54882bc0bd",
+      "zephyr-app/src/main.c": "0eb6f260b52df252d4905c55c86389168f71f6bac9da44cbeaf4aad3f80927ca",
+      "zephyr-app/src/queue_adapter.c": "a4372c7023d116395a89d9d86bc3acdc58de07dc9033be5c7d0c14872eb06a05",
+      "zephyr-app/src/queue_adapter.h": "c27ae7d3ae740b646c9dfbdc8251b9c5866e996c484a3f04dd8a8359afc951ab",
+      "zephyr-app/testcase.yaml": "e0193c87079d1da388fd74f7e3832ecf002c379a203639704b28155cc5683819"
+    },
+    "source_diff": "--- baseline\n+++ submitted\n@@ -1,8 +1,11 @@\n /* SPDX-License-Identifier: Apache-2.0\n  * Original portfolio adapter. Zephyr itself is not modified.\n  */\n+#include <errno.h>\n #include \"queue_adapter.h\"\n int queue_offer(struct k_msgq *queue, const void *message)\n {\n-    return k_msgq_put(queue, message, K_NO_WAIT);\n+    const int result = k_msgq_put(queue, message, K_NO_WAIT);\n+    /* Deliberate Stage 3 regression: wrongly report a rejected offer as success. */\n+    return result == -ENOMSG ? 0 : result;\n }\n",
+    "base_commit": "7c8505541580c93697dfbcec09662b89e0edffa2",
+    "adapter_template_revision": "2988a4d50901ce0b640e94f5b5b08e366615ebce",
+    "configurations": [
+      {
+        "capacity": 2,
+        "testcases": [
+          {
+            "identifier": "portfolio.queue.capacity2.queue_contract.empty_queue_error",
+            "execution_time": "0.00",
+            "status": "passed"
+          },
+          {
+            "identifier": "portfolio.queue.capacity2.queue_contract.queue_reuse_after_drain",
+            "execution_time": "0.00",
+            "status": "passed"
+          },
+          {
+            "identifier": "portfolio.queue.capacity2.queue_contract.full_queue_raw_and_adapter_error",
+            "execution_time": "0.00",
+            "status": "failed"
+          },
+          {
+            "identifier": "portfolio.queue.capacity2.queue_contract.fifo_and_payload_integrity",
+            "execution_time": "0.00",
+            "status": "passed"
+          },
+          {
+            "identifier": "portfolio.queue.capacity2.queue_contract.burst_return_codes_and_occupancy",
+            "execution_time": "0.00",
+            "status": "failed"
+          }
+        ],
+        "observed_values": [
+          {
+            "expected": 0,
+            "actual": 0
+          },
+          {
+            "expected": 0,
+            "actual": 0
+          },
+          {
+            "expected": -42,
+            "actual": 0
+          },
+          {
+            "expected": -42,
+            "actual": 0
+          },
+          {
+            "expected": -42,
+            "actual": 0,
+            "raw": -42
+          }
+        ],
+        "log_sha256": "387093fe1dc890e10575723f7da1b064fa9d06b8ddafa7e8f23e6cb6b10ff141"
+      },
+      {
+        "capacity": 4,
+        "testcases": [
+          {
+            "identifier": "portfolio.queue.capacity4.queue_contract.empty_queue_error",
+            "execution_time": "0.00",
+            "status": "passed"
+          },
+          {
+            "identifier": "portfolio.queue.capacity4.queue_contract.queue_reuse_after_drain",
+            "execution_time": "0.00",
+            "status": "passed"
+          },
+          {
+            "identifier": "portfolio.queue.capacity4.queue_contract.full_queue_raw_and_adapter_error",
+            "execution_time": "0.00",
+            "status": "failed"
+          },
+          {
+            "identifier": "portfolio.queue.capacity4.queue_contract.fifo_and_payload_integrity",
+            "execution_time": "0.00",
+            "status": "passed"
+          },
+          {
+            "identifier": "portfolio.queue.capacity4.queue_contract.burst_return_codes_and_occupancy",
+            "execution_time": "0.00",
+            "status": "passed"
+          }
+        ],
+        "observed_values": [
+          {
+            "expected": 0,
+            "actual": 0
+          },
+          {
+            "expected": 0,
+            "actual": 0
+          },
+          {
+            "expected": 0,
+            "actual": 0
+          },
+          {
+            "expected": 0,
+            "actual": 0
+          },
+          {
+            "expected": -42,
+            "actual": 0,
+            "raw": -42
+          }
+        ],
+        "log_sha256": "e75353da5619789180c1ae74e33d4164e08fc4703cd4692bb19a72820581f898"
+      }
+    ],
+    "original_result_sha256": "ef4b7eb85b7a0c9646cb21fba869b58868c48169738ffa2e0cf8835c0029b85d"
+  },
+  "recovery": {
+    "run_id": "f6b4757e29f940a78725f83513065142",
+    "status": "PASS",
+    "counts": {
+      "executed": 10,
+      "passed": 10,
+      "failed": 0
+    },
+    "process_exit_code": 0,
+    "execution_seconds": 89.28267804400002,
+    "verified_artifact_hashes": 888,
+    "image_id": "sha256:9690024bfce34b2cca3032d751b58349c0c8627f6cac5ad71da58208bb2c3267",
+    "source_sha256": {
+      "zephyr-app/CMakeLists.txt": "1ea86df33c660ebf5405f7126dc147652580c866b47ab7b99f4b2bd322e44618",
+      "zephyr-app/Kconfig": "33075df2406670305ee99c5995ee98de11c55cc27c278eb5498ef947642c0b5f",
+      "zephyr-app/LICENSE": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "zephyr-app/configs/capacity2.conf": "fd2841645cbd0b997f95eb3815e03c5616b351c2d5159917829843cbb325e6f3",
+      "zephyr-app/configs/capacity4.conf": "b5ee69bcd9cccdf3e2381f8325dd63727c64f1a1e26afb0b6c752308f1fea3f0",
+      "zephyr-app/prj.conf": "1bf84cd4f73d288baa379e1779ab96ee462766dd12b9f1a10eecaa54882bc0bd",
+      "zephyr-app/src/main.c": "0eb6f260b52df252d4905c55c86389168f71f6bac9da44cbeaf4aad3f80927ca",
+      "zephyr-app/src/queue_adapter.c": "c949aa7b4337621edabe165c8836f1a217bfc8bc1eb2a53d2c4a6321ec3a2040",
+      "zephyr-app/src/queue_adapter.h": "c27ae7d3ae740b646c9dfbdc8251b9c5866e996c484a3f04dd8a8359afc951ab",
+      "zephyr-app/testcase.yaml": "e0193c87079d1da388fd74f7e3832ecf002c379a203639704b28155cc5683819"
+    },
+    "source_diff": "--- baseline\n+++ submitted\n@@ -1,8 +1,11 @@\n /* SPDX-License-Identifier: Apache-2.0\n  * Original portfolio adapter. Zephyr itself is not modified.\n  */\n+#include <errno.h>\n #include \"queue_adapter.h\"\n int queue_offer(struct k_msgq *queue, const void *message)\n {\n-    return k_msgq_put(queue, message, K_NO_WAIT);\n+    const int result = k_msgq_put(queue, message, K_NO_WAIT);\n+    /* Deliberate Stage 3 regression: wrongly report a rejected offer as success. */\n+    return result;\n }\n",
+    "base_commit": "7c8505541580c93697dfbcec09662b89e0edffa2",
+    "adapter_template_revision": "7c8505541580c93697dfbcec09662b89e0edffa2",
+    "configurations": [
+      {
+        "capacity": 2,
+        "testcases": [
+          {
+            "identifier": "portfolio.queue.capacity2.queue_contract.empty_queue_error",
+            "execution_time": "0.00",
+            "status": "passed"
+          },
+          {
+            "identifier": "portfolio.queue.capacity2.queue_contract.queue_reuse_after_drain",
+            "execution_time": "0.00",
+            "status": "passed"
+          },
+          {
+            "identifier": "portfolio.queue.capacity2.queue_contract.full_queue_raw_and_adapter_error",
+            "execution_time": "0.00",
+            "status": "passed"
+          },
+          {
+            "identifier": "portfolio.queue.capacity2.queue_contract.fifo_and_payload_integrity",
+            "execution_time": "0.00",
+            "status": "passed"
+          },
+          {
+            "identifier": "portfolio.queue.capacity2.queue_contract.burst_return_codes_and_occupancy",
+            "execution_time": "0.00",
+            "status": "passed"
+          }
+        ],
+        "observed_values": [
+          {
+            "expected": 0,
+            "actual": 0
+          },
+          {
+            "expected": 0,
+            "actual": 0
+          },
+          {
+            "expected": -42,
+            "actual": -42
+          },
+          {
+            "expected": -42,
+            "actual": -42
+          },
+          {
+            "expected": -42,
+            "actual": -42,
+            "raw": -42
+          }
+        ],
+        "log_sha256": "46d1a906427eea647ae6f22a60414713f25592d1ece192594b7c2d9903d500df"
+      },
+      {
+        "capacity": 4,
+        "testcases": [
+          {
+            "identifier": "portfolio.queue.capacity4.queue_contract.empty_queue_error",
+            "execution_time": "0.00",
+            "status": "passed"
+          },
+          {
+            "identifier": "portfolio.queue.capacity4.queue_contract.queue_reuse_after_drain",
+            "execution_time": "0.00",
+            "status": "passed"
+          },
+          {
+            "identifier": "portfolio.queue.capacity4.queue_contract.full_queue_raw_and_adapter_error",
+            "execution_time": "0.00",
+            "status": "passed"
+          },
+          {
+            "identifier": "portfolio.queue.capacity4.queue_contract.fifo_and_payload_integrity",
+            "execution_time": "0.00",
+            "status": "passed"
+          },
+          {
+            "identifier": "portfolio.queue.capacity4.queue_contract.burst_return_codes_and_occupancy",
+            "execution_time": "0.00",
+            "status": "passed"
+          }
+        ],
+        "observed_values": [
+          {
+            "expected": 0,
+            "actual": 0
+          },
+          {
+            "expected": 0,
+            "actual": 0
+          },
+          {
+            "expected": 0,
+            "actual": 0
+          },
+          {
+            "expected": 0,
+            "actual": 0
+          },
+          {
+            "expected": -42,
+            "actual": -42,
+            "raw": -42
+          }
+        ],
+        "log_sha256": "78fc40c0d32f4cae1fe97d2c5da0fc5c48aae2e417f91edbb88f4a097f84eae1"
+      }
+    ],
+    "original_result_sha256": "baf17d77d47cb7b039d7aac9ee05e2ff66cfe47cf010f63262411a670bb3457e"
+  },
+  "schema_version": "local-recording-verification/1.0",
+  "equivalent_test_configuration_scope": true,
+  "jenkins_execution": "NOT_EXECUTED",
+  "model_inference": "NOT_EXECUTED",
+  "physical_hardware_validation": "NOT_PERFORMED",
+  "historical_jenkins_evidence_modified": false
+}

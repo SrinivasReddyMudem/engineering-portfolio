@@ -1,10 +1,18 @@
-# Embedded Build Reliability - Detecting a Defect That Compilation Missed
+[← Back to Engineering Portfolio](../README.md)
 
-A deliberately introduced queue-adapter defect falsely reported success when the queue was full. Automated behavioral tests detected it. Controlled recovery restored all 10 passing test executions without changing their assertions.
+*Engineering Portfolio / Case Study 02 of 03 · Build Reliability*
+
+# Embedded Build Reliability
 
 <img src="../assets/project-reliability.svg" alt="Embedded Build Reliability: recorded baseline, injected defect and verified recovery" width="1120" class="project-card">
 
 <img src="../assets/technologies-reliability.svg" alt="Technologies used: Jenkins, Docker, Git, Python, CMake/GCC, Zephyr RTOS, Twister/Ztest" width="1120" class="technology-row">
+
+**Detecting a defect that compilation missed.**
+
+A deliberately introduced queue-adapter defect falsely reported success when the queue was full. Automated behavioral tests detected it. Controlled recovery restored all 10 passing test executions without changing their assertions.
+
+**[▶ Watch the defect detection and recovery](#watch-the-defect-detection-and-recovery)**
 
 ## Recorded Jenkins verification
 
@@ -19,6 +27,34 @@ I integrated Zephyr Twister/Ztest verification into an isolated Jenkins/Docker w
 **Professional capability:** Embedded debugging, reproducible CI/CD verification, fault isolation and reviewable technical decisions.
 
 Official project: **Embedded CI/CD Reliability Platform**. Implementation repository: `embedded-cicd-reliability-platform` (private).
+
+## Watch the defect detection and recovery
+
+Change the reviewed C adapter, execute isolated verification, and follow the actual build and test output. Compilation succeeds, three behavioral assertions fail, and the local quality gate rejects the defective snapshot. Restoring error propagation returns all ten test executions to PASS.
+
+[![Recorded local Change & Verify: approved source mutation, build and test progress, three failed assertions, rejected local gate and successful recovery](../assets/reliability-local-demo.gif)](../assets/reliability-local-recovery.png)
+
+*Recorded local Change & Verify execution, separate from the retained Jenkins runs above. Execution portions replay at 8× speed, with pauses at source changes and verified outcomes. Captured elapsed times remain visible.*
+
+[Inspect this recording's source-linked results](../evidence/reliability-local-recording.json) · [View the failed final state](../assets/reliability-local-red.png) · [View the recovered final state](../assets/reliability-local-recovery.png)
+
+| This local recording | Executed | Passed | Failed | Local quality gate |
+| --- | --- | --- | --- | --- |
+| Injected adapter defect | 10 | 7 | 3 | Rejected |
+| Error propagation restored | 10 | 10 | 0 | Passed |
+
+The same test identities and configuration scope were verified across both runs; 888 artifact hashes were checked per execution. The approved source edits are compiled as separate immutable snapshots. The browser does not modify the original repository, push changes or trigger Jenkins.
+
+<details>
+<summary>Local recording identities and execution boundaries</summary>
+
+Recorded on 22 October 2026. Defect run: `12e24c9cb5c14f77b688a99939ff2544` (67.63 seconds). Recovery run: `f6b4757e29f940a78725f83513065142` (89.28 seconds).
+
+These are source snapshots, not newly committed revisions. The evidence records the base commit, adapter template revision, complete submitted source hashes and diff. The local repair preserves the error by returning `result`; the historical Jenkins recovery separately restored the original direct `k_msgq_put` return. Their identities are not interchangeable.
+
+Existing pinned offline container; network disabled; 2 CPUs / 2 GiB. Jenkins execution NOT_EXECUTED. Model inference NOT_EXECUTED. Physical hardware validation NOT_PERFORMED.
+
+</details>
 
 ## Technologies & Tools
 
@@ -70,4 +106,8 @@ This is a controlled regression experiment, not an independently discovered prod
 
 **The same assertions were used throughout. Recovery restored correct adapter behavior rather than changing the tests to obtain a passing result.** Source/configuration identities and retained integrity checks support comparison across equivalent execution scopes.
 
-[Inspect evidence analysis →](engineering-analysis.md) | [Request live local demo ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/) | [← Back to profile](../README.md)
+[Inspect evidence analysis →](engineering-analysis.md) · [Request live local demo ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)
+
+---
+
+**[Next: Domain-Specific AI Agents →](engineering-analysis.md)** · [← Back to Engineering Portfolio](../README.md) · [Connect on LinkedIn ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)

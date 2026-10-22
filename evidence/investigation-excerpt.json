@@ -1,0 +1,143 @@
+{
+  "kind": "source_linked_controlled_regression_review",
+  "analysis_method": "DETERMINISTIC_KNOWN_REGRESSION_RULE_V1",
+  "provider_execution": "NOT_EXECUTED",
+  "physical_hardware_validation": "NOT_PERFORMED",
+  "execution_origin": "RECORDED_JENKINS_EVIDENCE_WITH_LOCAL_GIT_SOURCE_INSPECTION",
+  "provenance": {
+    "source_report_sha256": "fe6c2459188de3213d2c00a6c092151f8f7166f139e7857977d060b6f6c8fc32",
+    "content_sha256": "a7b7cec726b687f39cd37be7c979c79071505febc8cea12f051b51035a5c37b9",
+    "evidence_index_sha256": "29b6246adfe45e02820c57bd6632f09ff1a8c340441f134cd0b21e17601238ac",
+    "revisions": {
+      "green": "7c8505541580c93697dfbcec09662b89e0edffa2",
+      "red": "2988a4d50901ce0b640e94f5b5b08e366615ebce",
+      "recovery": "1f343d0d212e9140665b6f7213ba2acb7475b318"
+    },
+    "reviewer_sha256": "68f7e9d661a68c44c3714ed59a903298eaae2f57db9a1b1f35efadf90e91cd7d"
+  },
+  "calculations": {
+    "counts": {
+      "green": {
+        "executed": 10,
+        "passed": 10,
+        "failed": 0
+      },
+      "red": {
+        "executed": 10,
+        "passed": 7,
+        "failed": 3
+      },
+      "recovery": {
+        "executed": 10,
+        "passed": 10,
+        "failed": 0
+      }
+    },
+    "red_failure_fraction": {
+      "numerator": 3,
+      "denominator": 10
+    },
+    "repaired_failed_tests": 3
+  },
+  "findings": [
+    {
+      "evidence_id": "ev-3ca1936555d9d3b1e18a83c7e1eb4a49846cc586a76e1f253bfc7df7c02a24f2",
+      "test_id": "portfolio.queue.capacity2.queue_contract.burst_return_codes_and_occupancy",
+      "capacity": 2,
+      "observed": {
+        "expected": -42,
+        "actual": 0,
+        "raw_zephyr": null,
+        "trace": "/home/sredd/engineering-portfolio/builds/zephyr-stage3/jenkins-build-3/results/twister/native_sim_native_64/host_gnu/work/zephyr-builds/3/source/zephyr-app/portfolio.queue.capacity2/handler.log",
+        "trace_text": "OFFER index=2 expected=-42 actual=0"
+      },
+      "source": {
+        "path": "zephyr-app/src/main.c",
+        "line": 67,
+        "assertion": "zassert_equal(offers[i], wanted, \"offer %d expected=%d actual=%d\", i, wanted, offers[i]);",
+        "revision": "2988a4d50901ce0b640e94f5b5b08e366615ebce"
+      },
+      "classification": "VERIFIED_CONTROLLED_REGRESSION",
+      "violated_contract": "queue_offer must preserve the full-queue error from k_msgq_put with K_NO_WAIT.",
+      "code_explanation": "The recorded adapter maps -ENOMSG to 0 (success). This contradicts the asserted error propagation contract.",
+      "consequence": "The caller can interpret a rejected queue offer as accepted. No production impact is measured.",
+      "verification": {
+        "green": "passed",
+        "red": "failed",
+        "recovery": "passed",
+        "recovery_revision": "1f343d0d212e9140665b6f7213ba2acb7475b318"
+      }
+    },
+    {
+      "evidence_id": "ev-fae942862c5eae7208ecf6a497c9702b6514af806cfb6ff7900082f1ea0e340b",
+      "test_id": "portfolio.queue.capacity2.queue_contract.full_queue_raw_and_adapter_error",
+      "capacity": 2,
+      "observed": {
+        "expected": -42,
+        "actual": 0,
+        "raw_zephyr": -42,
+        "trace": "/home/sredd/engineering-portfolio/builds/zephyr-stage3/jenkins-build-3/results/twister/native_sim_native_64/host_gnu/work/zephyr-builds/3/source/zephyr-app/portfolio.queue.capacity2/handler.log",
+        "trace_text": "FULL expected=-42 raw=-42 adapter=0"
+      },
+      "source": {
+        "path": "zephyr-app/src/main.c",
+        "line": 98,
+        "assertion": "zassert_equal(adapted, -ENOMSG, \"adapter must preserve full-queue error\");",
+        "revision": "2988a4d50901ce0b640e94f5b5b08e366615ebce"
+      },
+      "classification": "VERIFIED_CONTROLLED_REGRESSION",
+      "violated_contract": "queue_offer must preserve the full-queue error from k_msgq_put with K_NO_WAIT.",
+      "code_explanation": "The recorded adapter maps -ENOMSG to 0 (success). This contradicts the asserted error propagation contract.",
+      "consequence": "The caller can interpret a rejected queue offer as accepted. No production impact is measured.",
+      "verification": {
+        "green": "passed",
+        "red": "failed",
+        "recovery": "passed",
+        "recovery_revision": "1f343d0d212e9140665b6f7213ba2acb7475b318"
+      }
+    },
+    {
+      "evidence_id": "ev-e5a030b8eb0dd7c3e44ea2075e168bbbafae52274ae77ef586a695ac572e9d1b",
+      "test_id": "portfolio.queue.capacity4.queue_contract.full_queue_raw_and_adapter_error",
+      "capacity": 4,
+      "observed": {
+        "expected": -42,
+        "actual": 0,
+        "raw_zephyr": -42,
+        "trace": "/home/sredd/engineering-portfolio/builds/zephyr-stage3/jenkins-build-3/results/twister/native_sim_native_64/host_gnu/work/zephyr-builds/3/source/zephyr-app/portfolio.queue.capacity4/handler.log",
+        "trace_text": "FULL expected=-42 raw=-42 adapter=0"
+      },
+      "source": {
+        "path": "zephyr-app/src/main.c",
+        "line": 98,
+        "assertion": "zassert_equal(adapted, -ENOMSG, \"adapter must preserve full-queue error\");",
+        "revision": "2988a4d50901ce0b640e94f5b5b08e366615ebce"
+      },
+      "classification": "VERIFIED_CONTROLLED_REGRESSION",
+      "violated_contract": "queue_offer must preserve the full-queue error from k_msgq_put with K_NO_WAIT.",
+      "code_explanation": "The recorded adapter maps -ENOMSG to 0 (success). This contradicts the asserted error propagation contract.",
+      "consequence": "The caller can interpret a rejected queue offer as accepted. No production impact is measured.",
+      "verification": {
+        "green": "passed",
+        "red": "failed",
+        "recovery": "passed",
+        "recovery_revision": "1f343d0d212e9140665b6f7213ba2acb7475b318"
+      }
+    }
+  ],
+  "remedy": {
+    "description": "Restore error propagation in the adapter; retain test assertions and configuration.",
+    "verified_existing_repair": true,
+    "source_revision": "1f343d0d212e9140665b6f7213ba2acb7475b318",
+    "newly_applied": false,
+    "newly_executed": false
+  },
+  "unknowns": [
+    "No fresh build or Jenkins execution was performed by this review.",
+    "No general defect discovery, LLM inference, physical timing or production safety conclusion.",
+    "Hashes establish consistency with the trusted local evidence, not independent signed authenticity.",
+    "This diagnosis recognizes the controlled error-translation defect only; unsupported evidence fails closed."
+  ],
+  "schema_version": "source-linked-review-excerpt/1.0",
+  "original_review_sha256": "2aa33a799206eb81a6f4becedf79599f95cac59316c5612e4936a96c17c68bbc"
+}

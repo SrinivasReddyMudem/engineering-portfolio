@@ -1,3 +1,7 @@
+[← Back to Engineering Portfolio](../README.md)
+
+*Engineering Portfolio / Case Study 03 of 03 · Engineering Analysis*
+
 # Domain-Specific AI Agents
 
 <img src="../assets/project-analysis.svg" alt="Domain-Specific AI Agents - specialist engineering guidance with facts, assumptions and verification steps" width="1120" class="project-card">
@@ -10,25 +14,41 @@
 
 13 specialist agents help organize embedded-software questions into clear investigations: what is known, what is missing and what to check next.
 
-## One question. Two response styles.
-
-**Question:** "CAN node goes bus-off after 3 minutes, only when engine running."
-
-**Illustrative built-in example - not a verified diagnosis. Its hypotheses, thresholds and calculations require engineering review.**
-
-<table class="response-comparison"><thead><tr><th scope="col">Generic answer</th><th scope="col">Domain-specific answer</th></tr></thead><tbody><tr><td><pre class="generic-answer">&quot;Check your CAN bus wiring&#10; and termination. Verify&#10; baud rate settings are&#10; consistent across all&#10; nodes...&quot;</pre></td><td><div class="answer-section"><div class="answer-section-name"><strong>Protocol:</strong></div><pre>CAN | HIGH confidence</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Data:</strong></div><pre>PARTIAL — oscilloscope trace required&#10;            to confirm ripple vs GND offset</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Facts:</strong></div><pre>bus-off after 3 min, engine-running dependency</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Assumptions:</strong></div><pre>~1 msg/s TX rate (not provided)&#10;            single node affected (not confirmed)</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Basis:</strong></div><pre>bus-off after 3 min&#10;  → TEC accumulation, intermittent errors&#10;  only when engine running&#10;  → engine-coupled noise source</pre></div><div class="answer-section"><div class="answer-section-name"><strong>OSI Layer:</strong></div><pre>L1 Physical</pre></div><div class="answer-section"><div class="answer-section-name"><strong>AUTOSAR Layer:</strong></div><pre>MCAL (CanDrv)</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Tool:</strong></div><pre>Oscilloscope&#10;  - Diff probe on CAN_H/CAN_L (signal integrity)&#10;  - Single-ended probe on Vcc (ripple check)</pre></div><div class="answer-section"><div class="answer-section-name"><strong>TEC Math:</strong></div><pre>Net climb = 256 / 180s&#10;              = 1.41 TEC/s&#10;  Bus-off: ~181s — 3 min ✓</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Ruled Out:</strong></div><pre>Software issue — engine-dependent symptom&#10;                   contradicts SW fault&#10;  Bus overload   — does not match gradual&#10;                   TEC-driven failure pattern</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Causes:</strong></div><pre>[HIGH]   Alternator ripple (most likely)&#10;           Engine-running maps to supply noise&#10;           Vcc AC-coupled&#10;           Pass &lt; 200mV / Fail &gt; 500mV&#10;&#10;  [MEDIUM] GND offset&#10;           Condition-dependent noise possible&#10;           but less consistent&#10;           Pass &lt; 50mV / Fail &gt; 200mV</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Decision Flow:</strong></div><pre>Vcc + GND OK?&#10;  +-- No  --&gt; Fix supply&#10;  +-- Yes --&gt; Error frames?&#10;      +-- No  --&gt; Check thermal drift&#10;                  (heat gun on transceiver)&#10;      +-- Yes --&gt; L1/L7</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Next Action:</strong></div><pre>Measure Vcc ripple at transceiver pin&#10;  with engine at 2000 RPM</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Contradictions:</strong></div><pre>None — inputs consistent with&#10;  TEC-driven bus-off behaviour</pre></div></td></tr></tbody></table>
-
-## My engineering contribution
-
-I built the Python/Streamlit application with **13 specialist agents, eight knowledge packs, structured response schemas and targeted validation**. It supports development, testing, integration/FAE and technical-lead workflows.
-
 ## Verified software results
 
 [![Recorded offline verification: 363 agent checks and 78 calculator checks, all 441 passed; no model inference](../assets/agent-validation-summary.svg)](agent-test-evidence.md)
 
 363 agent checks and 78 calculator checks passed offline with mocked providers. These verify software behavior, not live model accuracy.
 
-**[▶ Try live AI Agents](https://automotive-skilled-ai-agents.streamlit.app/)** | [Inspect validation evidence →](agent-test-evidence.md) | [← Back to profile](../README.md)
+**[▶ Try live AI Agents](https://automotive-skilled-ai-agents.streamlit.app/)** | [Inspect validation evidence →](agent-test-evidence.md)
+
+## My engineering contribution
+
+I built the Python/Streamlit application with **13 specialist agents, eight knowledge packs, structured response schemas and targeted validation**. It supports development, testing, integration/FAE and technical-lead workflows.
+
+## One question. Two response styles.
+
+**Question:** "CAN node goes bus-off after 3 minutes, only when engine running."
+
+**Illustrative built-in example—not a verified diagnosis. Its assumptions, thresholds and calculations require engineering review. Engine dependence alone cannot rule out software.**
+
+<table class="response-comparison"><thead><tr><th scope="col">Generic answer</th><th scope="col">Domain-specific answer</th></tr></thead><tbody><tr><td><pre class="generic-answer">&quot;Check your CAN bus wiring&#10; and termination. Verify&#10; baud rate settings are&#10; consistent across all&#10; nodes...&quot;</pre></td><td><div class="answer-section"><div class="answer-section-name"><strong>Protocol:</strong></div><pre>CAN | HIGH confidence</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Data:</strong></div><pre>PARTIAL — oscilloscope trace required&#10;            to confirm ripple vs GND offset</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Facts:</strong></div><pre>bus-off after 3 min, engine-running dependency</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Assumptions:</strong></div><pre>~1 msg/s TX rate (not provided)&#10;            single node affected (not confirmed)</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Basis:</strong></div><pre>bus-off after 3 min&#10;  → TEC accumulation, intermittent errors&#10;  only when engine running&#10;  → engine-coupled noise source</pre></div><div class="answer-section"><div class="answer-section-name"><strong>OSI Layer:</strong></div><pre>L1 Physical</pre></div><div class="answer-section"><div class="answer-section-name"><strong>AUTOSAR Layer:</strong></div><pre>MCAL (CanDrv)</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Tool:</strong></div><pre>Oscilloscope&#10;  - Diff probe on CAN_H/CAN_L (signal integrity)&#10;  - Single-ended probe on Vcc (ripple check)</pre></div><div class="answer-section"><div class="answer-section-name"><strong>TEC Math:</strong></div><pre>Net climb = 256 / 180s&#10;              = 1.41 TEC/s&#10;  Bus-off: ~181s — 3 min ✓</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Ruled Out:</strong></div><pre>Software issue — engine-dependent symptom&#10;                   contradicts SW fault&#10;  Bus overload   — does not match gradual&#10;                   TEC-driven failure pattern</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Causes:</strong></div><pre>[HIGH]   Alternator ripple (most likely)&#10;           Engine-running maps to supply noise&#10;           Vcc AC-coupled&#10;           Pass &lt; 200mV / Fail &gt; 500mV&#10;&#10;  [MEDIUM] GND offset&#10;           Condition-dependent noise possible&#10;           but less consistent&#10;           Pass &lt; 50mV / Fail &gt; 200mV</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Decision Flow:</strong></div><pre>Vcc + GND OK?&#10;  +-- No  --&gt; Fix supply&#10;  +-- Yes --&gt; Error frames?&#10;      +-- No  --&gt; Check thermal drift&#10;                  (heat gun on transceiver)&#10;      +-- Yes --&gt; L1/L7</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Next Action:</strong></div><pre>Measure Vcc ripple at transceiver pin&#10;  with engine at 2000 RPM</pre></div><div class="answer-section"><div class="answer-section-name"><strong>Contradictions:</strong></div><pre>None — inputs consistent with&#10;  TEC-driven bus-off behaviour</pre></div></td></tr></tbody></table>
+
+## Follow the evidence from failure to recovery
+
+The separate isolated evidence extension connects recorded test failures to exact assertions and source revisions. It verifies the known controlled defect and its recorded repair; it does not claim that the public AI Agents app independently diagnosed the failure.
+
+[![Deterministic evidence analysis: expected minus 42, actual zero, the related adapter change and recorded recovery verified against unchanged assertions](../assets/investigation-excerpt.png)](../evidence/investigation-excerpt.json)
+
+**Observed:** a full queue returned `-ENOMSG` (`-42` in this environment), but the controlled adapter reported `0`. Three assertions rejected that contradiction: capacity 2 at `main.c:67`, and capacities 2 and 4 at `main.c:98`.
+
+**Verified code relationship:** the recorded adapter maps `-ENOMSG` to success. Restoring error propagation returns the same assertions to PASS in the retained Jenkins recovery.
+
+*Deterministic analysis of recorded Jenkins builds #2, #3 and #4 and exact Git source objects. Model inference NOT_EXECUTED. No new build, Jenkins run or automatic repair is performed by this review.*
+
+[Inspect the three findings, evidence references and source identities](../evidence/investigation-excerpt.json)
+
+The excerpt verified twelve source hashes across Green, Red and Recovery. It uses the historical Jenkins executions, separately from the fresh local Change & Verify recording in the Build Reliability case study.
 
 <details>
 <summary>Technologies, specialist coverage and technical evidence</summary>
@@ -111,3 +131,7 @@ The strongest implemented safeguards are explicit response contracts, selected d
 
 
 </details>
+
+---
+
+**[Next: Embedded Communication & Diagnostics →](embedded-communication.md)** · [← Back to Engineering Portfolio](../README.md) · [Connect on LinkedIn ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)
