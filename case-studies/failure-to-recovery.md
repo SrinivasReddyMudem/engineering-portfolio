@@ -24,7 +24,7 @@ Each recorded Jenkins run contained 10 test executions across two queue configur
 
 I integrated Zephyr Twister/Ztest verification into an isolated Jenkins/Docker workflow, retained source-linked verification artifacts and implemented deterministic reporting to compare the baseline, injected defect and recovery.
 
-**Professional capability:** Embedded debugging, reproducible CI/CD verification, fault isolation and reviewable technical decisions.
+**Professional capability:** Embedded test development · Build automation · CI/CD integration · Fault isolation · Regression verification
 
 Official project: **Embedded CI/CD Reliability Platform**. Implementation repository: `embedded-cicd-reliability-platform` (private).
 

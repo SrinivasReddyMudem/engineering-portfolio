@@ -26,6 +26,8 @@
 
 I built the Python/Streamlit application with **13 specialist agents, eight knowledge packs, structured response schemas and targeted validation**. It supports development, testing, integration/FAE and technical-lead workflows.
 
+**Professional capability:** Python development · Structured engineering investigation · Response validation · Evidence traceability · Technical communication
+
 ## One question. Two response styles.
 
 **Question:** "CAN node goes bus-off after 3 minutes, only when engine running."

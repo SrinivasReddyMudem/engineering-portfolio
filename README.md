@@ -7,7 +7,9 @@
 
 **I'm Srinivas Reddy Mudem, with 11+ years of embedded software experience spanning C/C++ development, integration and software project leadership.**
 
-**Explore:** [Verified communication](case-studies/embedded-communication.md) · [Defect detection & recovery](case-studies/failure-to-recovery.md) · [Engineering analysis](case-studies/engineering-analysis.md)
+My work combines software development, systematic debugging and technical delivery, with clear ownership, collaboration and verification.
+
+**Explore:** [Embedded development & integration](case-studies/embedded-communication.md) · [Build automation & verification](case-studies/failure-to-recovery.md) · [Engineering investigation](case-studies/engineering-analysis.md)
 
 ## See the engineering in action
 
@@ -21,9 +23,7 @@ Can the receiving software reconstruct exactly what the sender transmitted?
 
 **Verified: 5/5 application bytes matched · 1 frame · 17/17 behavioral assertions passed.**
 
-#### Skills
-
-C development · Software integration · Protocol debugging · Issue investigation · Automated testing · Technical demonstrations
+**Professional capability:** Embedded C development · Software integration · Protocol debugging · Fault investigation · Automated verification
 
 [![Recorded HELLO demonstration: input, Send, observed frame movement and verified reception at ECU B](assets/communication-demo.gif)](case-studies/embedded-communication.md#watch-a-recorded-hello-transfer)
 
@@ -45,9 +45,7 @@ The code compiled successfully. Behavioral tests still caught the defect.
 
 **Green: 10/10 passed → Red: 7 passed, 3 failed → Recovery: 10/10 passed.**
 
-#### Skills
-
-Build automation · CI/CD integration · Failure investigation · Regression testing · Recovery verification · Technical reporting
+**Professional capability:** Embedded test development · Build automation · CI/CD integration · Fault isolation · Regression verification
 
 I integrated Zephyr RTOS verification into an isolated Jenkins/Docker workflow with controlled defect injection and source-linked test evidence.
 
@@ -74,9 +72,7 @@ This preview comes from the separately verified local Docker/Twister demonstrati
 
 Turn an engineering question into a structured, reviewable investigation.
 
-#### Skills
-
-Python development · Structured analysis · Investigation planning · Response validation · Evidence traceability · Technical guidance
+**Professional capability:** Python development · Structured engineering investigation · Response validation · Evidence traceability · Technical communication
 
 **Question:** CAN node goes bus-off after three minutes, only when the engine is running.
 

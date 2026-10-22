@@ -20,7 +20,7 @@ A successful send operation does not prove that the receiver reconstructed the c
 
 I integrated a pinned upstream ISO-TP implementation with a hardware-free C host adapter, deterministic simulated time, two independent endpoints and controlled fault scenarios. I connected genuine C execution results to frame traces, behavioral tests and reproducible structured evidence, while preserving upstream attribution.
 
-**Professional capability:** Embedded C integration, interface reasoning, protocol debugging and repeatable verification.
+**Professional capability:** Embedded C development · Software integration · Protocol debugging · Fault investigation · Automated verification
 
 Official project: **Automotive Embedded Integration & CI/CD Platform**. Implementation repository: `automotive-embedded-integration-cicd-platform` (private).
 
