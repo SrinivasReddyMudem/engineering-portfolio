@@ -18,6 +18,25 @@ I integrated a pinned upstream ISO-TP implementation with a hardware-free C host
 
 Official project: **Automotive Embedded Integration & CI/CD Platform**. Implementation repository: `automotive-embedded-integration-cicd-platform` (private).
 
+## Watch a recorded HELLO transfer
+
+Watch HELLO submitted to the compiled C transport, then follow the observed frame from Endpoint A to Endpoint B. The receiver reconstructs the same five application bytes, with **17/17 behavioral assertions passing**.
+
+[![Recorded local C execution: HELLO input, observed frame movement and verified reception of five matching bytes](../assets/communication-demo.gif)](../assets/communication-final-state.png)
+
+*Recorded local C execution. Frame movement replays observed events, not physical CAN traffic or browser-side C execution.*
+
+[Inspect this recording's execution evidence](../evidence/communication-recording.json) · [View the readable final state](../assets/communication-final-state.png)
+
+<details>
+<summary>Recording identity and historical evidence</summary>
+
+This demonstration was recorded on 22 October 2026. Run identity: `2f35453e774e49dc977d239ede488289`. Native source revision: `a395087926b68898ebf8cc85a5f2d05fcb3eab77`.
+
+Its five application bytes (`48 45 4C 4C 4F`), frame (`05 48 45 4C 4C 4F 00 00`) and 17 passing assertions match the historical HELLO example. It is a separate execution from the historical revision `23fa0d2e28945609d0811dc6dd1a1cbdfe43d710` documented below. The original evidence is preserved unchanged.
+
+</details>
+
 ## Technologies & Tools
 
 **Communication:** `C` · `ISO-TP` · `CAN frame representation` · `UDS test scenarios (limited scope)`

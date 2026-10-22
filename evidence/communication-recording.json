@@ -1,0 +1,342 @@
+{
+  "schema_version": "1.0",
+  "run_id": "2f35453e774e49dc977d239ede488289",
+  "origin": "live_c_execution",
+  "recorded_at_utc": "2026-10-22T08:35:11.323116+00:00",
+  "result": {
+    "schema_version": "1.0",
+    "execution_status": "COMPLETED",
+    "scenario_id": "single",
+    "verdict": "PASS",
+    "expected_fault_detected": false,
+    "source_digest": "bd988975809a7642e11be9fa02f762cc5883843d16614ef386687ad89851d12d",
+    "upstream_revision": "5593428d95af10dde1e565cebcda16089fc74857",
+    "compiler": "GNU 13.3.0",
+    "inputs": {
+      "payload": [
+        72,
+        69,
+        76,
+        76,
+        79
+      ],
+      "peer_payload": []
+    },
+    "actual": {
+      "simulated_end_ms": 0,
+      "frames_emitted": 1,
+      "frames_injected": 0,
+      "received_a": [],
+      "received_b": [
+        72,
+        69,
+        76,
+        76,
+        79
+      ]
+    },
+    "frames": [
+      {
+        "sequence": 1,
+        "time_ms": 0,
+        "source": 0,
+        "destination": 1,
+        "can_id": 1792,
+        "action": "delivered",
+        "delivery_result": 0,
+        "bytes": [
+          5,
+          72,
+          69,
+          76,
+          76,
+          79,
+          0,
+          0
+        ],
+        "original_bytes": [
+          5,
+          72,
+          69,
+          76,
+          76,
+          79,
+          0,
+          0
+        ],
+        "origin": "protocol",
+        "fault_kind": "delivered",
+        "original_size": 8
+      }
+    ],
+    "events": [
+      {
+        "time_ms": 0,
+        "operation": "initialize",
+        "endpoint": 0,
+        "return_code": 0,
+        "send_status": [
+          0,
+          0
+        ],
+        "receive_status": [
+          0,
+          0
+        ],
+        "send_protocol_result": [
+          0,
+          0
+        ],
+        "receive_protocol_result": [
+          0,
+          0
+        ]
+      },
+      {
+        "time_ms": 0,
+        "operation": "send",
+        "endpoint": 0,
+        "return_code": 0,
+        "send_status": [
+          0,
+          0
+        ],
+        "receive_status": [
+          0,
+          0
+        ],
+        "send_protocol_result": [
+          0,
+          0
+        ],
+        "receive_protocol_result": [
+          0,
+          0
+        ]
+      },
+      {
+        "time_ms": 0,
+        "operation": "deliver_frame",
+        "endpoint": 1,
+        "return_code": 0,
+        "send_status": [
+          0,
+          0
+        ],
+        "receive_status": [
+          0,
+          2
+        ],
+        "send_protocol_result": [
+          0,
+          0
+        ],
+        "receive_protocol_result": [
+          0,
+          0
+        ]
+      },
+      {
+        "time_ms": 0,
+        "operation": "receive",
+        "endpoint": 1,
+        "return_code": 0,
+        "send_status": [
+          0,
+          0
+        ],
+        "receive_status": [
+          0,
+          0
+        ],
+        "send_protocol_result": [
+          0,
+          0
+        ],
+        "receive_protocol_result": [
+          0,
+          0
+        ]
+      }
+    ],
+    "application_protocol": "ISO-TP",
+    "uds_upstream_revision": "",
+    "assertions": [
+      {
+        "id": "init.1",
+        "description": "Two endpoints initialize",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "id": "independent_buffers.2",
+        "description": "Endpoint RX arrays are independent",
+        "expected": 1,
+        "actual": 1,
+        "passed": true
+      },
+      {
+        "id": "send_return.3",
+        "description": "Sending is accepted",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "id": "peer_route.4",
+        "description": "Frame is addressed to opposite ECU",
+        "expected": 1,
+        "actual": 1,
+        "passed": true
+      },
+      {
+        "id": "can_id.5",
+        "description": "Frame ID matches source ECU",
+        "expected": 1792,
+        "actual": 1792,
+        "passed": true
+      },
+      {
+        "id": "delivery_return.6",
+        "description": "Adapter accepts frame delivery",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "id": "drain.7",
+        "description": "Queued frames delivered",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "id": "completion.8",
+        "description": "Transfer completes within bounded steps",
+        "expected": 1,
+        "actual": 1,
+        "passed": true
+      },
+      {
+        "id": "receive_return.9",
+        "description": "ECU B receives complete message",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "id": "payload_length.10",
+        "description": "ECU B length matches input",
+        "expected": 5,
+        "actual": 5,
+        "passed": true
+      },
+      {
+        "id": "payload_equal.11",
+        "description": "ECU B payload equals input byte for byte",
+        "expected": 1,
+        "actual": 1,
+        "passed": true
+      },
+      {
+        "id": "receiver_protocol_ok.12",
+        "description": "Receiver protocol result is OK",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "id": "sender_protocol_ok.13",
+        "description": "Sender protocol result is OK",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "id": "one_frame.14",
+        "description": "Exactly one CAN frame emitted",
+        "expected": 1,
+        "actual": 1,
+        "passed": true
+      },
+      {
+        "id": "sf_type.15",
+        "description": "Observed frame is SF",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "id": "no_loopback.16",
+        "description": "Sender received no own frame",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      },
+      {
+        "id": "recording_bounds.17",
+        "description": "All evidence fit recorder capacity",
+        "expected": 0,
+        "actual": 0,
+        "passed": true
+      }
+    ]
+  },
+  "provenance": {
+    "native_source_revision": "a395087926b68898ebf8cc85a5f2d05fcb3eab77",
+    "upstream_revision": "5593428d95af10dde1e565cebcda16089fc74857",
+    "source_digest": "bd988975809a7642e11be9fa02f762cc5883843d16614ef386687ad89851d12d",
+    "binary_sha256": "26f49fceb9668b3f66429422c1b933395b39ea570ea68ba56c1dad4ea62bfaa9",
+    "source_files": {
+      "demonstrator/native/CMakeLists.txt": "824650dde6484f74adc51323a22fde989ee49f7f7d530011e7e9e303c8f25636",
+      "demonstrator/native/advanced.c": "8e5e98661ef16d104d8a8e59b32d6be4998c3b5de869f69a8f1816ae37d3d4bc",
+      "demonstrator/native/advanced.h": "b6b1208bb90c688ce9e1fa664fb86cbac769f5197e6a6c8220b878fa9f2386a2",
+      "demonstrator/native/demo.c": "a64465dedcdd81ea5b933112ac9c104565d3c089c79cce85fac6b1a9c98b1930",
+      "demonstrator/native/uds_demo.c": "8ce83fe564157ac7e2f60e5a5a5aa1b20a362906de4a1fb378cecbe6de83226b",
+      "demonstrator/native/uds_demo.h": "e515555cc9a3be807b2394a543e8a0e9adface8e10e3e4b81758285b76d2cc1f",
+      "include/host_adapter.h": "47a32ecfe2206484e81ed65b8aac7ccc3ddf330ba4abaf4296ae130880b560d6",
+      "src/host_adapter.c": "aaaf9596ec2b3ffd71b54ddceeee3b8643f8c87432a2c92e4a3acf7f07f77597",
+      "third_party/iso14229/LICENSE": "bce604d061f572509e6139f574fd857eed2271cee8cbd97f40b024734ae69469",
+      "third_party/iso14229/iso14229.c": "4b545a77b1900d95ae8bd4683d3224fef38960a7d59db38858130834b55a5f3f",
+      "third_party/iso14229/iso14229.h": "30eec21f69f42de2ce02d2f3031c300ca8494b94999bee00c1feedd2adece0ad",
+      "third_party/isotp-c/.gitignore": "498e08234364066a8d63d9f192f80d9ee3162cae590e9978fd20f387b729c72f",
+      "third_party/isotp-c/.travis.yml": "e231144caafec32e27a082201bf7142750022d316173e559389ce801c7eccbe6",
+      "third_party/isotp-c/CMakeLists.txt": "17ce436ba4608e0bb04bd292efa53183de0c58ffd341ce6e20b78a9af72f934a",
+      "third_party/isotp-c/LICENSE": "acc5e8742fd8a2158f3d3646d40ac9199ae46dd791ce6dcd077528784acce655",
+      "third_party/isotp-c/Makefile": "e347281983f54d78e58e63ff6e689511b6b9df1582407aa0aba08a4ee5b615e1",
+      "third_party/isotp-c/README.mkd": "ad12a45e1bf10b3253765b04c2e940e8f10f09cdf122643e9c757caade2759ed",
+      "third_party/isotp-c/isotp.c": "d5d7621778f3ce590c6af6a4448fb1ec622104affffef2845d817e700989f1a2",
+      "third_party/isotp-c/isotp.h": "a983950e920771c42ca570fb3280d359c324ce6f15fb11c496efe3f5d9d0ff17",
+      "third_party/isotp-c/isotp_config.h": "25f3db22431920aa29920c437cff6ad7d28a3a2ed454e4467da0a850df9c9c7f",
+      "third_party/isotp-c/isotp_defines.h": "67d1ea506eba481d26c5326ff0cbf549fd184bfd64b570b3df040d824699e532",
+      "third_party/isotp-c/isotp_user.h": "4cada939461956568212bc84a94e25a1deeeef1aff1fac85bb9982abb30a60c0",
+      "third_party/isotp-c/vars.mk": "8e48f3458c07daa6821c27f49e3b577797d36d28c7515f4b0dddbd39965d047a"
+    },
+    "compiler": "GNU 13.3.0"
+  },
+  "execution": {
+    "return_code": 0,
+    "wall_duration_ms": 7.849,
+    "command": [
+      "out/phase1c/gcc/isotp_demo",
+      "single",
+      "48454c4c4f"
+    ],
+    "stdout_sha256": "9b783f0e7c20fee0b18e492668bbef994e61ddd6d19a2a8df055b8f2c692dc4e",
+    "stderr": ""
+  },
+  "portfolio_contract": {
+    "schema_version": "1.0",
+    "project_id": "project-1",
+    "test_id": "Phase1B single + Phase1C demo_single",
+    "requirement": "SF-001: 1\u20137 payload bytes shall arrive unchanged at ECU B using exactly one CAN frame, without sender loopback.",
+    "application_protocol": "ISO-TP",
+    "evidence_source": "compiled_c",
+    "intended_reuse": [
+      "industrial-ci-reliability",
+      "existing-automotive-lifecycle-agents"
+    ]
+  },
+  "preview_label": "Recorded demonstration of actual local C execution; animation replays observed frames. No physical ECU traffic."
+}
