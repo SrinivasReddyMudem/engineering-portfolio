@@ -1,6 +1,6 @@
 # Agent Application: Automated Test Evidence
 
-**441 tests passed** in the recorded local offline run on 21 October 2026.
+**441 tests passed** in the recorded local offline run.
 
 | Scope | Passed | What this measures |
 | --- | --- | --- |
@@ -22,7 +22,7 @@ Baseline source commit: `83df8ff8feaefee32a42b9b6c76f1ff3c84d4e63`. Source/test/
 
 Original retained JUnit SHA-256: `7eda8db8be96205e87a4ca319d9bbf5b108011174400598a737a662890b7243d`.
 
-[Inspect the recorded JUnit results](../evidence/agent-tests.junit.xml) · [Explore the original agent application](engineering-analysis.md) · [Back to profile](../README.md)
+[Inspect the recorded JUnit results](../evidence/agent-tests.junit.xml) · [Explore the AI Agents case study](engineering-analysis.md) · [Back to profile](../README.md)
 
 ## Public export
 

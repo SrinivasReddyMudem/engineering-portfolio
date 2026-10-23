@@ -20,7 +20,7 @@
 
 363 agent checks and 78 calculator checks passed offline with mocked providers. These verify software behavior, not live model accuracy.
 
-**[▶ Try live AI Agents](https://automotive-skilled-ai-agents.streamlit.app/)** | [Inspect validation evidence →](agent-test-evidence.md)
+**[▶ Try the live AI Agents demonstration](https://automotive-skilled-ai-agents.streamlit.app/)** | [Inspect validation evidence →](agent-test-evidence.md)
 
 ## My engineering contribution
 
@@ -38,9 +38,9 @@ I built the Python/Streamlit application with **13 specialist agents, eight know
 
 ## Follow the evidence from failure to recovery
 
-The separate isolated evidence extension connects recorded test failures to exact assertions and source revisions. It verifies the known controlled defect and its recorded repair; it does not claim that the public AI Agents app independently diagnosed the failure.
+The separate isolated evidence extension connects recorded test failures to exact assertions and source revisions. It verifies the known controlled defect and its recorded repair; it does not claim that the public AI Agents demonstration independently diagnosed the failure.
 
-[![Deterministic evidence analysis: expected minus 42, actual zero, the related adapter change and recorded recovery verified against unchanged assertions](../assets/investigation-excerpt.png)](../evidence/investigation-excerpt.json)
+[![Deterministic evidence analysis: expected minus 42, actual zero, the related adapter change and recorded recovery verified against unchanged assertions](../assets/investigation-excerpt.png)](../assets/investigation-excerpt.png)
 
 **Observed:** a full queue returned `-ENOMSG` (`-42` in this environment), but the controlled adapter reported `0`. Three assertions rejected that contradiction: capacity 2 at `main.c:67`, and capacities 2 and 4 at `main.c:98`.
 
@@ -48,9 +48,16 @@ The separate isolated evidence extension connects recorded test failures to exac
 
 *Deterministic analysis of recorded Jenkins builds #2, #3 and #4 and exact Git source objects. Model inference NOT_EXECUTED. No new build, Jenkins run or automatic repair is performed by this review.*
 
-[Inspect the three findings, evidence references and source identities](../evidence/investigation-excerpt.json)
+[Inspect failed assertions and recovery](failure-to-recovery.md#technical-evidence) · [Request a guided local investigation demonstration ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)
 
 The excerpt verified twelve source hashes across Green, Red and Recovery. It uses the historical Jenkins executions, separately from the fresh local Change & Verify recording in the Build Reliability case study.
+
+<details>
+<summary>Source references & raw investigation evidence</summary>
+
+[Raw findings, evidence references and source identities (JSON)](../evidence/investigation-excerpt.json).
+
+</details>
 
 <details>
 <summary>Technologies, specialist coverage and technical evidence</summary>
@@ -121,7 +128,7 @@ The UI scores domain keywords and supports specialist selection. In five focused
 
 A separate isolated copy, `automotive-lifecycle-agents-evidence`, adds deterministic processing of genuine Project 1/2 reports. It links the Zephyr queue failures to expected `-42` versus actual `0`, the affected assertions and recorded recovery. That workflow validates evidence references and provenance; it is not the public app automatically running Jenkins or discovering an arbitrary source defect.
 
-The [recorded queue evidence](../evidence/recorded-recovery-summary.json) remains inspectable. Model inference in the offline evidence workflow is **NOT_EXECUTED**. The public specialist-agent application is the separate provider-backed demonstration.
+The [recorded queue results and failed assertions](failure-to-recovery.md#technical-evidence) remain inspectable. Model inference in the offline evidence workflow is **NOT_EXECUTED**. The public specialist-agent application is the separate provider-backed demonstration.
 
 ### Notes on the copied example
 

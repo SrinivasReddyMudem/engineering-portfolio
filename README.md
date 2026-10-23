@@ -31,7 +31,7 @@ I integrated an existing C ISO-TP implementation with two host endpoints, determ
 
 *Recorded local C execution. The animation replays observed frames; it is not physical CAN traffic or browser-side C execution.*
 
-**[Inspect communication case study and evidence →](case-studies/embedded-communication.md)**
+**[Inspect communication case study and evidence →](case-studies/embedded-communication.md)** · [Request a live local demonstration ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)
 
 ### 2. Embedded Build Reliability
 
@@ -51,16 +51,16 @@ I integrated Zephyr RTOS verification into an isolated Jenkins/Docker workflow w
 
 *Recorded Jenkins executions; ten test executions across two queue configurations. The same assertions verified recovery.*
 
-**[Inspect detected defect and verified recovery →](case-studies/failure-to-recovery.md)**
+**[Inspect detected defect and verified recovery →](case-studies/failure-to-recovery.md)** · [Request a live local demonstration ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)
 
 <details>
-<summary>Separate local Change & Verify demonstration — static preview</summary>
+<summary>Recorded local Change & Verify — static preview</summary>
 
-[![Recorded local verification: successful source preparation, failed behavioral tests and rejected local quality gate](assets/local-verification-preview.png)](case-studies/failure-to-recovery.md#watch-the-defect-detection-and-recovery)
+[![Recorded local verification: successful source preparation, failed behavioral tests and rejected local quality gate](assets/reliability-local-red-03.png)](case-studies/failure-to-recovery.md#watch-the-defect-detection-and-recovery)
 
 This preview comes from the separately verified local Docker/Twister demonstration. It is not a Jenkins run. Compilation succeeded, three behavioral assertions failed, and the local quality gate rejected the injected defect. A subsequent local repair passed all ten tests.
 
-[Inspect the distinction between recorded Jenkins and local verification](case-studies/failure-to-recovery.md#recorded-jenkins-versus-live-local-demonstration). A guided local demonstration is available on request.
+[Inspect the distinction between recorded Jenkins and local verification](case-studies/failure-to-recovery.md#recorded-jenkins-versus-live-local-demonstration). A live local demonstration is available on request.
 
 </details>
 
@@ -88,7 +88,7 @@ I developed **13 specialist engineering agents and eight domain knowledge packs*
 
 **441/441 offline software checks passed:** 363 agent checks and 78 calculator checks, using mocked provider responses. This is software verification, not a live model-accuracy benchmark.
 
-**[▶ Try the public AI Agents app](https://automotive-skilled-ai-agents.streamlit.app/)** · [Inspect the case study and validation →](case-studies/engineering-analysis.md)
+**[▶ Try the live AI Agents demonstration](https://automotive-skilled-ai-agents.streamlit.app/)** · [Inspect the case study and validation →](case-studies/engineering-analysis.md)
 
 A [separate deterministic evidence extension](case-studies/engineering-analysis.md#follow-the-evidence-from-failure-to-recovery) links recorded test failures to exact assertions, source revisions and verified recovery. That workflow does not perform model inference.
 
@@ -96,7 +96,7 @@ A [separate deterministic evidence extension](case-studies/engineering-analysis.
 
 The demonstrations use retained execution records, unchanged regression checks and source-linked evidence. Recorded Jenkins results, local C demonstrations and offline AI software tests are separate verification activities. The ISO-TP communication and Zephyr queue workloads are separate implementations.
 
-**My engineering approach:** Reuse proven components, reproduce failures, compare expected and actual behavior, verify repairs and preserve traceable results.
+**My engineering approach:** Build on proven components, investigate problems systematically, verify behavior with repeatable tests, and deliver results backed by traceable evidence.
 
 <details>
 <summary>Full toolkit and standards context</summary>
@@ -113,8 +113,8 @@ The agent knowledge packs include MISRA, ISO 26262, ASPICE and cybersecurity top
 
 ## Live demonstrations & contact
 
-The [public AI Agents application](https://automotive-skilled-ai-agents.streamlit.app/) is available to explore. Live local demonstrations of embedded communication, build/test verification and fault investigation are available on request.
+The [live AI Agents demonstration](https://automotive-skilled-ai-agents.streamlit.app/) is available to explore. Live local demonstrations of embedded communication, build/test verification and fault investigation are available on request.
 
-Communication and build-platform implementation repositories remain private. The [AI Agents source repository](https://github.com/SrinivasReddyMudem/automotive-lifecycle-agents) is public. These examples demonstrate software behavior, not physical hardware validation.
+These demonstrations show software behavior; physical hardware validation is outside the demonstrated scope.
 
 **[Connect on LinkedIn →](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)**

@@ -12,7 +12,7 @@
 
 A deliberately introduced queue-adapter defect falsely reported success when the queue was full. Automated behavioral tests detected it. Controlled recovery restored all 10 passing test executions without changing their assertions.
 
-**[▶ Watch the defect detection and recovery](#watch-the-defect-detection-and-recovery)**
+**[▶ Watch the defect detection and recovery](#watch-the-defect-detection-and-recovery)** · [Request a live local demonstration ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)
 
 ## Recorded Jenkins verification
 
@@ -32,23 +32,27 @@ Official project: **Embedded CI/CD Reliability Platform**. Implementation reposi
 
 Change the reviewed C adapter, execute isolated verification, and follow the actual build and test output. Compilation succeeds, three behavioral assertions fail, and the local quality gate rejects the defective snapshot. Restoring error propagation returns all ten test executions to PASS.
 
-[![Recorded local Change & Verify: approved source mutation, build and test progress, three failed assertions, rejected local gate and successful recovery](../assets/reliability-local-demo.gif)](../assets/reliability-local-recovery.png)
+[![Recorded local Change & Verify: approved source mutation, build and test progress, three failed assertions, rejected local gate and successful recovery](../assets/reliability-local-demo-03.gif)](../assets/reliability-local-recovery-03.png)
 
 *Recorded local Change & Verify execution, separate from the retained Jenkins runs above. Execution portions replay at 8× speed, with pauses at source changes and verified outcomes. Captured elapsed times remain visible.*
 
-[Inspect this recording's source-linked results](../evidence/reliability-local-recording.json) · [View the failed final state](../assets/reliability-local-red.png) · [View the recovered final state](../assets/reliability-local-recovery.png)
+[Inspect local verification results](#local-verification-results) · [View the failed final state](../assets/reliability-local-red-03.png) · [View the recovered final state](../assets/reliability-local-recovery-03.png)
+
+### Local verification results
 
 | This local recording | Executed | Passed | Failed | Local quality gate |
 | --- | --- | --- | --- | --- |
 | Injected adapter defect | 10 | 7 | 3 | Rejected |
 | Error propagation restored | 10 | 10 | 0 | Passed |
 
-The same test identities and configuration scope were verified across both runs; 888 artifact hashes were checked per execution. The approved source edits are compiled as separate immutable snapshots. The browser does not modify the original repository, push changes or trigger Jenkins.
+The same test identities and configuration scope were verified across both runs; 889 artifact hashes were checked for the defect run and 888 for recovery. The approved source edits are compiled as separate immutable snapshots. The browser does not modify the original repository, push changes or trigger Jenkins.
 
 <details>
-<summary>Local recording identities and execution boundaries</summary>
+<summary>Source snapshots & raw verification evidence</summary>
 
-Recorded on 22 October 2026. Defect run: `12e24c9cb5c14f77b688a99939ff2544` (67.63 seconds). Recovery run: `f6b4757e29f940a78725f83513065142` (89.28 seconds).
+Defect run: `383463bb85f64482a2b2e5ebc72e29d4` (95.06 seconds). Recovery run: `13920ed70c3c44f387c89f0c5d32e8b5` (108.54 seconds).
+
+[Raw local execution evidence (JSON)](../evidence/reliability-local-recording-03.json).
 
 These are source snapshots, not newly committed revisions. The evidence records the base commit, adapter template revision, complete submitted source hashes and diff. The local repair preserves the error by returning `result`; the historical Jenkins recovery separately restored the original direct `k_msgq_put` return. Their identities are not interchangeable.
 
@@ -80,8 +84,6 @@ Three assertions detected the defect: one burst-behavior check for capacity 2, a
 
 ## Technical evidence
 
-[Inspect recorded source revisions, counts and assertion evidence](../evidence/recorded-recovery-summary.json).
-
 The following identities refer to retained recorded executions. This page does not rerun Jenkins. The image above is evidence-derived artwork, not a screenshot or live pipeline status.
 
 | Recorded execution | Full source revision | Executed | Passed | Failed |
@@ -96,6 +98,13 @@ The following identities refer to retained recorded executions. This page does n
 | Explicit full-queue adapter result | 2 messages | `main.c:98` | `-42` | `0` |
 | Explicit full-queue adapter result | 4 messages | `main.c:98` | `-42` | `0` |
 
+<details>
+<summary>Inspect raw Jenkins verification evidence</summary>
+
+[Raw source revisions, counts and assertions (JSON)](../evidence/recorded-recovery-summary.json).
+
+</details>
+
 ### Recorded Jenkins versus live local demonstration
 
 The Green/Red/Recovery results above come from recorded Jenkins executions. The local showcase separately supports a bounded adapter experiment through the existing Docker/Twister runner. It is not a newly triggered Jenkins build, and its editor accepts approved variants rather than arbitrary code.
@@ -106,7 +115,7 @@ This is a controlled regression experiment, not an independently discovered prod
 
 **The same assertions were used throughout. Recovery restored correct adapter behavior rather than changing the tests to obtain a passing result.** Source/configuration identities and retained integrity checks support comparison across equivalent execution scopes.
 
-[Inspect evidence analysis →](engineering-analysis.md) · [Request live local demo ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)
+[Inspect evidence analysis →](engineering-analysis.md) · [Request a live local demonstration ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)
 
 ---
 

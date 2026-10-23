@@ -8,13 +8,13 @@
 
 <img src="../assets/technologies-embedded.svg" alt="Technologies used: C, ISO-TP/CAN, GCC/Clang, CMake/CTest, Python/pytest" width="1120" class="technology-row">
 
-**[▶ Watch the recorded HELLO transfer](#watch-a-recorded-hello-transfer)**
+**[▶ Watch the recorded HELLO transfer](#watch-a-recorded-hello-transfer)** · [Request a live local demonstration ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)
 
 A successful send operation does not prove that the receiver reconstructed the correct application message. This project uses repeatable C tests to inspect the actual frames, received bytes and supported fault behavior.
 
 **Verified result:** The recorded C execution transmitted and reconstructed five matching application bytes (`48 45 4C 4C 4F`, representing "HELLO"). The frame trace and behavioral assertions support the result.
 
-[![Verified recorded HELLO transfer: 5/5 bytes matched, 1 CAN frame, 17/17 assertions passed](../assets/communication-verified.svg)](../evidence/communication-excerpt.json)
+[![Verified recorded HELLO transfer: 5/5 bytes matched, 1 CAN frame, 17/17 assertions passed](../assets/communication-verified.svg)](#recorded-hello-transfer)
 
 ## My engineering contribution
 
@@ -32,14 +32,16 @@ Watch HELLO submitted to the compiled C transport, then follow the observed fram
 
 *Recorded local C execution. Frame movement replays observed events, not physical CAN traffic or browser-side C execution.*
 
-[Inspect this recording's execution evidence](../evidence/communication-recording.json) · [View the readable final state](../assets/communication-final-state.png)
+[Inspect transfer results](#recorded-hello-transfer) · [View the readable final state](../assets/communication-final-state.png)
 
 <details>
-<summary>Recording identity and historical evidence</summary>
+<summary>Source revisions & raw verification evidence</summary>
 
-This demonstration was recorded on 22 October 2026. Run identity: `2f35453e774e49dc977d239ede488289`. Native source revision: `a395087926b68898ebf8cc85a5f2d05fcb3eab77`.
+Recording run identity: `2f35453e774e49dc977d239ede488289`. Native source revision: `a395087926b68898ebf8cc85a5f2d05fcb3eab77`.
 
 Its five application bytes (`48 45 4C 4C 4F`), frame (`05 48 45 4C 4C 4F 00 00`) and 17 passing assertions match the historical HELLO example. It is a separate execution from the historical revision `23fa0d2e28945609d0811dc6dd1a1cbdfe43d710` documented below. The original evidence is preserved unchanged.
+
+[Raw recording evidence (JSON)](../evidence/communication-recording.json) · [Raw historical transfer evidence (JSON)](../evidence/communication-excerpt.json).
 
 </details>
 
@@ -55,7 +57,7 @@ Its five application bytes (`48 45 4C 4C 4F`), frame (`05 48 45 4C 4C 4F 00 00`)
 
 ## What you can explore
 
-The local demonstrator supports the following engineering walkthrough. This static case study presents recorded evidence; it does not run the C executable in your browser.
+A live local demonstration lets you run supported C scenarios and inspect the results. This GitHub case study shows recorded evidence.
 
 | Explore | What you can inspect |
 | --- | --- |
@@ -86,13 +88,20 @@ The local demonstrator supports the following engineering walkthrough. This stat
 
 The leading `05` encodes the ISO-TP single-frame payload length. The final zeros are padding. Neither is part of the five application bytes of HELLO.
 
-[Inspect recorded payloads, frames and assertions](../evidence/communication-excerpt.json).
+The table above summarizes the retained payload, frame and assertion evidence. Full source identities and raw records are available in **Source revisions & raw verification evidence** above.
 
 ### Verified fault example - Missing flow control
 
-[![Recorded missing flow control: EXPECTED FAULT, timeout at 101 ms simulated time, 17/17 assertions passed](../assets/communication-fault-summary.svg)](../evidence/communication-fault-excerpt.json)
+[![Recorded missing flow control: EXPECTED FAULT, timeout at 101 ms simulated time, 17/17 assertions passed](../assets/communication-fault-summary.svg)](../assets/communication-fault-summary.svg)
 
-The recorded sender still waits at 100 ms of injected time and reports this implementation’s `TIMEOUT_BS` result (`-2`) at 101 ms. The receiver exposes no complete application message. All 17 behavioral assertions passed, giving an **EXPECTED_FAULT** verdict: correct fault detection, not successful delivery. These are simulated protocol times, not wall-clock performance measurements. [Inspect the recorded fault frames and assertions](../evidence/communication-fault-excerpt.json).
+The recorded sender still waits at 100 ms of injected time and reports this implementation’s `TIMEOUT_BS` result (`-2`) at 101 ms. The receiver exposes no complete application message. All 17 behavioral assertions passed, giving an **EXPECTED_FAULT** verdict: correct fault detection, not successful delivery. These are simulated protocol times, not wall-clock performance measurements.
+
+<details>
+<summary>Inspect raw fault verification evidence</summary>
+
+[Raw fault frames and assertions (JSON)](../evidence/communication-fault-excerpt.json).
+
+</details>
 
 ### Execution scope
 
@@ -102,7 +111,7 @@ The HELLO recording demonstrates the stated single-frame transfer, not every seg
 
 The visual is derived from recorded execution evidence, not a screenshot. The demonstration uses host-executed C software and does not claim physical ECU validation.
 
-[Inspect communication evidence →](../evidence/communication-excerpt.json) · [Request live local demo ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)
+[Inspect communication evidence →](#technical-evidence) · [Request a live local demonstration ↗](https://www.linkedin.com/in/srinivas-reddy-mudem-400181152/)
 
 ---
 
