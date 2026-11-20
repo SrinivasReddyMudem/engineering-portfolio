@@ -1,0 +1,28 @@
+
+ .control-intro{padding:10px 18px;border-left:5px solid #2563eb;background:#edf4ff;border-radius:10px;margin-bottom:15px}
+ .control-intro h2{margin:0 0 6px;color:#102a43;font-size:25px}.control-intro p{margin:0;color:#334155}
+ .control-stage{min-height:130px;padding:13px;border:2px solid #94a3b8;border-radius:11px;background:white;color:#334155}
+ .control-stage strong{display:block;font-size:16px}.control-stage small{display:block;margin-top:8px;font-weight:700}
+ .control-stage.passed{background:#14532d;border-color:#15803d;color:white}.control-stage.failed{background:#991b1b;border-color:#b91c1c;color:white}
+ .control-stage.running{background:#173da0;border-color:#60a5fa;color:white;box-shadow:0 0 15px #2563eb44}
+ .control-stage.blocked{background:#f1f5f9;color:#475569;border-color:#94a3b8}
+ .control-spinner{display:inline-block;width:13px;height:13px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:control-spin .8s linear infinite;vertical-align:middle;margin-right:5px}
+ @keyframes control-spin{to{transform:rotate(360deg)}}
+ .control-diagram{padding:12px;background:#f3f7fd;border:1px solid #cbd5e1;border-radius:14px;margin:6px 0}
+ .control-diagram svg{width:100%;height:auto;display:block}.control-flow{stroke-dasharray:9 7;animation:control-travel .9s linear infinite}
+ @keyframes control-travel{to{stroke-dashoffset:-32}}
+ .control-check{padding:10px 13px;background:#eaf5ee;border-left:4px solid #15803d;border-radius:7px;color:#14532d;margin:7px 0}
+ .control-check.reject{background:#fff0f0;border-color:#b91c1c;color:#991b1b}
+ .control-log{height:310px;overflow:auto;white-space:pre-wrap;background:#101f35;color:#e2e8f0;padding:14px;border-radius:10px;font:12px/1.5 ui-monospace,monospace}
+ .control-story{padding:16px 20px;background:#eef4ff;border-left:5px solid #2563eb;border-radius:10px;margin:12px 0;color:#17324d}.control-story h3{margin:0 0 7px;font-size:23px}.control-story p{margin:5px 0}.control-evidence-label{font-size:13px;color:#475569;margin:4px 0}
+ @media(prefers-reduced-motion:reduce){.control-spinner,.control-flow{animation:none}}
+
+.connected-pipeline{flex-wrap:nowrap}.connected-pipeline .control-stage{min-width:210px}.flow-link{min-width:24px;width:24px}.four-panel-replay{overflow:auto}.control-stage{transition:background .25s,border-color .25s}.connected-pipeline .control-stage{font-family:system-ui}.connected-pipeline small{font-size:12px}
+
+/* Event snapshots redraw markup. Completed checks must never reanimate. */
+.four-panel-replay .flow-check.observed:before,
+.four-panel-replay .flow-check.observed>b{animation:none!important}
+.four-panel-replay .control-stage:not(.running) .flow-check:before,
+.four-panel-replay .control-stage:not(.running) .flow-check>b,
+.four-panel-replay .control-stage:not(.running) .control-spinner{animation:none!important}
+.four-panel-replay .flow-check.check-running:before{animation:check-line-running 1s linear infinite!important}

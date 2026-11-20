@@ -1,0 +1,1060 @@
+{
+  "schema_version": "control-verification-comparison/1.0",
+  "origin": "RECORDED_LOCAL_VERIFICATION",
+  "unchanged_test_sources": true,
+  "runs": [
+    {
+      "run_id": "5bf702dd8bea4e7bbe113f25ba99707f",
+      "status": "BEHAVIORAL_FAIL",
+      "counts": {
+        "executed": 45,
+        "passed": 41,
+        "failed": 4
+      },
+      "source_report_sha256": "cc0c53c57032b80f1f5023eb535108512b955490094d291d743d7f1461dd9b41",
+      "content_sha256": "68784a3f1081b936f0972c024634b4f2b9e6f19c4ff2b360a66dc27304f40e1c",
+      "source_base_commit": "aa76470b3a7df1a36b23494740870ed969700139",
+      "source_uncommitted": true,
+      "source_sha256": {
+        "test_drive.c": "a90674780fcde846ffd097fbbfa7df188d15974ec4bddbd7e4fda5e97476dea1",
+        "controller.c": "2b09fefc193c3ae1f30fb34086c91a3355b63d6643530e9bdebc66efcb909cfa",
+        "plc_wrapper.c": "555f72e13031a07ce31cfdc1c4905a0673d16c3a602fe28557cf0a2e740529ad",
+        "drive_controller.c": "1e9dc340e1a1a02312fdfc7a8bc95f0449098c858593d6d8ce4af0afd560f733",
+        "main.c": "34d0e4ae600a210b2e293b8c0ce2a4a4ec5a1bf5cac3ef27a3ba6b6251f78ec2",
+        "operator_sequence.st": "a5f52080aa23ada3d6d2cdd2261807d61db3f738c9a1bd1d9fa8d43270c8178b",
+        "plc-toolchain.json": "ca10825e53ade4804019ac2c263548c870b9ddee3d7cacf170db0287fed48795",
+        "test_controller.c": "95349a7f3c140d12d8d7ae78bc4238eedd26890b6783deadf3c882d2add61f45",
+        "drive_probe.c": "b91d9521240c9c0d812dbe9429149c2b934c15269ca3e90b678dc03c147dd580",
+        "drive_controller.h": "8739d5781617221cd716df74052b4f5dfd375c0a160c51cc3e720e46d2a2f0fa",
+        "speed_policy.c": "c64391590916720de9ca3d6ada5473e8f4e182b74171d2ff80fa96361d55a1ef",
+        "encoder_main.c": "17de611e6edf8130be87cd9b8c7b728e512e4d21bda697e7ba1d23cbb1eff5c9",
+        "CMakeLists.txt": "0b31d3c227c8cbf93fc3d5088194fdc7fb0d9171da7f00530f6eaf8e6b3e6acf",
+        "plc_interface.h": "b7cae7416baeaab07931676d9a6ba3f6ea51c4c3336b9e8ba6b8d8a68895d724",
+        "test_sequence.c": "d27fd13d3453fb006d1e9b4306d5d4bc63bd0aa021ea734744202fd6ff1afa72",
+        "controller.h": "b1c059f0b485445fbd2b4d72615b0ba4f112324dead917b3e7fd7998915e215d",
+        "plc_generated/LOCATED_VARIABLES.h": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "plc_generated/POUS.h": "fd81552ddc91b55fc4aada51632ae7bc0c714ccca1a4a0a1e8fa87c6f07a7466",
+        "plc_generated/POUS.c": "9becbcda6c7e4877048b4c2b11b0a4ea9a3bdaaffb579ad889757f542b6f62e2",
+        "plc_generated/GLOBALS.h": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "assertions": [
+        {
+          "type": "assertion",
+          "id": "START-01-grace-not-running",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_drive.c",
+          "line": 14
+        },
+        {
+          "type": "assertion",
+          "id": "START-02-drive-request-enabled",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_drive.c",
+          "line": 15
+        },
+        {
+          "type": "assertion",
+          "id": "START-03-grace-boundary",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_drive.c",
+          "line": 16
+        },
+        {
+          "type": "assertion",
+          "id": "START-04-deadline",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_drive.c",
+          "line": 17
+        },
+        {
+          "type": "assertion",
+          "id": "SPEED-01-confirmed-running",
+          "passed": true,
+          "expected": 2,
+          "actual": 2,
+          "source": "test_drive.c",
+          "line": 18
+        },
+        {
+          "type": "assertion",
+          "id": "SPEED-02-calculation-300-rpm",
+          "passed": true,
+          "expected": 300000,
+          "actual": 300000,
+          "source": "test_drive.c",
+          "line": 19
+        },
+        {
+          "type": "assertion",
+          "id": "SPEED-03-limit-equality-allowed",
+          "passed": true,
+          "expected": 2,
+          "actual": 2,
+          "source": "test_drive.c",
+          "line": 20
+        },
+        {
+          "type": "assertion",
+          "id": "SPEED-04-calculation-600-rpm",
+          "passed": true,
+          "expected": 600000,
+          "actual": 600000,
+          "source": "test_drive.c",
+          "line": 21
+        },
+        {
+          "type": "assertion",
+          "id": "SPEED-05-overspeed-detected",
+          "passed": false,
+          "expected": 3,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 22
+        },
+        {
+          "type": "assertion",
+          "id": "SPEED-06-fault-disables-drive",
+          "passed": false,
+          "expected": 0,
+          "actual": 1,
+          "source": "test_drive.c",
+          "line": 23
+        },
+        {
+          "type": "assertion",
+          "id": "SPEED-07-exact-scaled-comparison",
+          "passed": false,
+          "expected": 1,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 24
+        },
+        {
+          "type": "assertion",
+          "id": "TIME-01-100ms-boundary",
+          "passed": true,
+          "expected": 2,
+          "actual": 2,
+          "source": "test_drive.c",
+          "line": 25
+        },
+        {
+          "type": "assertion",
+          "id": "TIME-02-late-sample-cannot-hide-gap",
+          "passed": true,
+          "expected": 2,
+          "actual": 2,
+          "source": "test_drive.c",
+          "line": 26
+        },
+        {
+          "type": "assertion",
+          "id": "TIME-03-stale-speed-labelled",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 27
+        },
+        {
+          "type": "assertion",
+          "id": "TIME-04-no-new-pulses",
+          "passed": true,
+          "expected": 3,
+          "actual": 3,
+          "source": "test_drive.c",
+          "line": 28
+        },
+        {
+          "type": "assertion",
+          "id": "FAULT-01-overspeed-before-stop",
+          "passed": false,
+          "expected": 3,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 29
+        },
+        {
+          "type": "assertion",
+          "id": "FAULT-02-start-does-not-clear-latch",
+          "passed": true,
+          "expected": 3,
+          "actual": 3,
+          "source": "test_drive.c",
+          "line": 31
+        },
+        {
+          "type": "assertion",
+          "id": "RESET-01-moving-feedback-rejected",
+          "passed": true,
+          "expected": 3,
+          "actual": 3,
+          "source": "test_drive.c",
+          "line": 32
+        },
+        {
+          "type": "assertion",
+          "id": "RESET-02-stationary-reset-ready",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 33
+        },
+        {
+          "type": "assertion",
+          "id": "RESET-03-reset-not-start",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 34
+        },
+        {
+          "type": "assertion",
+          "id": "RESET-04-new-start-needs-new-pulses",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_drive.c",
+          "line": 35
+        },
+        {
+          "type": "assertion",
+          "id": "STOP-01-controller-ready",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 36
+        },
+        {
+          "type": "assertion",
+          "id": "STOP-02-drive-off",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 37
+        },
+        {
+          "type": "assertion",
+          "id": "INPUT-01-decreasing-time-rejected",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_drive.c",
+          "line": 38
+        },
+        {
+          "type": "assertion",
+          "id": "INPUT-02-invalid-time-immutable",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 39
+        },
+        {
+          "type": "assertion",
+          "id": "INPUT-03-same-time-count-rejected",
+          "passed": true,
+          "expected": 2,
+          "actual": 2,
+          "source": "test_drive.c",
+          "line": 40
+        },
+        {
+          "type": "assertion",
+          "id": "INPUT-04-invalid-sample-immutable",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 41
+        },
+        {
+          "type": "assertion",
+          "id": "COUNTER-01-single-wrap-delta",
+          "passed": true,
+          "expected": 10,
+          "actual": 10,
+          "source": "test_drive.c",
+          "line": 43
+        },
+        {
+          "type": "assertion",
+          "id": "COUNTER-02-wrap-speed",
+          "passed": true,
+          "expected": 300000,
+          "actual": 300000,
+          "source": "test_drive.c",
+          "line": 43
+        },
+        {
+          "type": "assertion",
+          "id": "READY-01-no-motion-is-not-fault",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 44
+        },
+        {
+          "type": "assertion",
+          "id": "START-05-repeat-start-cannot-extend-deadline",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_drive.c",
+          "line": 46
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-01-start-command",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_sequence.c",
+          "line": 8
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-02-start-is-not-running",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_sequence.c",
+          "line": 9
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-03-await-running-ack",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_sequence.c",
+          "line": 10
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-04-running-confirmed",
+          "passed": true,
+          "expected": 2,
+          "actual": 2,
+          "source": "test_sequence.c",
+          "line": 11
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-05-controller-fault",
+          "passed": true,
+          "expected": 3,
+          "actual": 3,
+          "source": "test_sequence.c",
+          "line": 12
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-06-fault-blocks-start",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_sequence.c",
+          "line": 13
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-07-reset-command",
+          "passed": true,
+          "expected": 3,
+          "actual": 3,
+          "source": "test_sequence.c",
+          "line": 14
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-08-ready-after-confirmed-reset",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_sequence.c",
+          "line": 15
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-09-ack-deadline-boundary",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_sequence.c",
+          "line": 17
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-10-timeout-stop-request",
+          "passed": true,
+          "expected": 2,
+          "actual": 2,
+          "source": "test_sequence.c",
+          "line": 18
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-11-timeout-fault",
+          "passed": true,
+          "expected": 3,
+          "actual": 3,
+          "source": "test_sequence.c",
+          "line": 19
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-12-timeout-reason",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_sequence.c",
+          "line": 19
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-13-stop-priority",
+          "passed": true,
+          "expected": 2,
+          "actual": 2,
+          "source": "test_sequence.c",
+          "line": 20
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-14-no-start-if-C-not-ready",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_sequence.c",
+          "line": 21
+        }
+      ],
+      "process_results": [
+        {
+          "sequence": 7,
+          "elapsed_seconds": 0.1042,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "plc-compile.log"
+        },
+        {
+          "sequence": 24,
+          "elapsed_seconds": 1.6938,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "configure.log"
+        },
+        {
+          "sequence": 39,
+          "elapsed_seconds": 2.1046,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "build.log"
+        },
+        {
+          "sequence": 74,
+          "elapsed_seconds": 2.106,
+          "type": "process_exit",
+          "exit_code": 1,
+          "log": "assertions.log"
+        },
+        {
+          "sequence": 92,
+          "elapsed_seconds": 2.107,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "plc-assertions.log"
+        },
+        {
+          "sequence": 95,
+          "elapsed_seconds": 2.108,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "restart-probe.log"
+        },
+        {
+          "sequence": 210,
+          "elapsed_seconds": 2.1466,
+          "type": "process_exit",
+          "exit_code": 8,
+          "log": "ctest.log"
+        },
+        {
+          "sequence": 230,
+          "elapsed_seconds": 2.2546,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "cppcheck.xml"
+        }
+      ],
+      "stage_states": {
+        "Build & Test": "failed",
+        "Cybersecurity": "blocked",
+        "Control & Fault Handling": "blocked",
+        "Quality Gate": "failed"
+      },
+      "source": "/* Demonstration shaft-speed limit; not a real escalator safety threshold. */\n#include <stdbool.h>\n#include <stdint.h>\nbool speed_exceeds_limit(uint64_t measured, uint64_t limit)\n{\n    /* Compare exact scaled values so rounding cannot hide an exceedance. */\n    return (measured > limit) && false; /* Deliberate defect: always suppress overspeed. */\n}\n",
+      "ctest_log": "[STARTED] CTest regression suites | executable: ctest\nInternal ctest changing into directory: [recorded-run]/build\nUpdateCTestConfiguration  from :[recorded-run]/build/DartConfiguration.tcl\nUpdateCTestConfiguration  from :[recorded-run]/build/DartConfiguration.tcl\nTest project [recorded-run]/build\nConstructing a list of tests\nDone constructing a list of tests\nUpdating test list for fixtures\nAdded 0 tests to meet fixture requirements\nChecking test dependency graph...\nChecking test dependency graph end\ntest 1\n    Start 1: encoder_contracts\n\n1: Test command: [recorded-run]/build/controller_tests\n1: Working Directory: [recorded-run]/build\n1: Test timeout computed to be: 10000000\n1: {\"type\":\"assertion\",\"id\":\"START-01-grace-not-running\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":14}\n1: {\"type\":\"assertion\",\"id\":\"START-02-drive-request-enabled\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":15}\n1: {\"type\":\"assertion\",\"id\":\"START-03-grace-boundary\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":16}\n1: {\"type\":\"assertion\",\"id\":\"START-04-deadline\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":17}\n1: {\"type\":\"assertion\",\"id\":\"SPEED-01-confirmed-running\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_drive.c\",\"line\":18}\n1: {\"type\":\"assertion\",\"id\":\"SPEED-02-calculation-300-rpm\",\"passed\":true,\"expected\":300000,\"actual\":300000,\"source\":\"test_drive.c\",\"line\":19}\n1: {\"type\":\"assertion\",\"id\":\"SPEED-03-limit-equality-allowed\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_drive.c\",\"line\":20}\n1: {\"type\":\"assertion\",\"id\":\"SPEED-04-calculation-600-rpm\",\"passed\":true,\"expected\":600000,\"actual\":600000,\"source\":\"test_drive.c\",\"line\":21}\n1: {\"type\":\"assertion\",\"id\":\"SPEED-05-overspeed-detected\",\"passed\":false,\"expected\":3,\"actual\":0,\"source\":\"test_drive.c\",\"line\":22}\n1: {\"type\":\"assertion\",\"id\":\"SPEED-06-fault-disables-drive\",\"passed\":false,\"expected\":0,\"actual\":1,\"source\":\"test_drive.c\",\"line\":23}\n1: {\"type\":\"assertion\",\"id\":\"SPEED-07-exact-scaled-comparison\",\"passed\":false,\"expected\":1,\"actual\":0,\"source\":\"test_drive.c\",\"line\":24}\n1: {\"type\":\"assertion\",\"id\":\"TIME-01-100ms-boundary\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_drive.c\",\"line\":25}\n1: {\"type\":\"assertion\",\"id\":\"TIME-02-late-sample-cannot-hide-gap\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_drive.c\",\"line\":26}\n1: {\"type\":\"assertion\",\"id\":\"TIME-03-stale-speed-labelled\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":27}\n1: {\"type\":\"assertion\",\"id\":\"TIME-04-no-new-pulses\",\"passed\":true,\"expected\":3,\"actual\":3,\"source\":\"test_drive.c\",\"line\":28}\n1: {\"type\":\"assertion\",\"id\":\"FAULT-01-overspeed-before-stop\",\"passed\":false,\"expected\":3,\"actual\":0,\"source\":\"test_drive.c\",\"line\":29}\n1: {\"type\":\"assertion\",\"id\":\"FAULT-02-start-does-not-clear-latch\",\"passed\":true,\"expected\":3,\"actual\":3,\"source\":\"test_drive.c\",\"line\":31}\n1: {\"type\":\"assertion\",\"id\":\"RESET-01-moving-feedback-rejected\",\"passed\":true,\"expected\":3,\"actual\":3,\"source\":\"test_drive.c\",\"line\":32}\n1: {\"type\":\"assertion\",\"id\":\"RESET-02-stationary-reset-ready\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":33}\n1: {\"type\":\"assertion\",\"id\":\"RESET-03-reset-not-start\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":34}\n1: {\"type\":\"assertion\",\"id\":\"RESET-04-new-start-needs-new-pulses\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":35}\n1: {\"type\":\"assertion\",\"id\":\"STOP-01-controller-ready\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":36}\n1: {\"type\":\"assertion\",\"id\":\"STOP-02-drive-off\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":37}\n1: {\"type\":\"assertion\",\"id\":\"INPUT-01-decreasing-time-rejected\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":38}\n1: {\"type\":\"assertion\",\"id\":\"INPUT-02-invalid-time-immutable\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":39}\n1: {\"type\":\"assertion\",\"id\":\"INPUT-03-same-time-count-rejected\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_drive.c\",\"line\":40}\n1: {\"type\":\"assertion\",\"id\":\"INPUT-04-invalid-sample-immutable\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":41}\n1: {\"type\":\"assertion\",\"id\":\"COUNTER-01-single-wrap-delta\",\"passed\":true,\"expected\":10,\"actual\":10,\"source\":\"test_drive.c\",\"line\":43}\n1: {\"type\":\"assertion\",\"id\":\"COUNTER-02-wrap-speed\",\"passed\":true,\"expected\":300000,\"actual\":300000,\"source\":\"test_drive.c\",\"line\":43}\n1: {\"type\":\"assertion\",\"id\":\"READY-01-no-motion-is-not-fault\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":44}\n1: {\"type\":\"assertion\",\"id\":\"START-05-repeat-start-cannot-extend-deadline\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":46}\n1: {\"type\":\"test_summary\",\"executed\":31,\"passed\":27,\"failed\":4}\n1/2 Test #1: encoder_contracts ................***Failed    0.00 sec\n{\"type\":\"assertion\",\"id\":\"START-01-grace-not-running\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":14}\n{\"type\":\"assertion\",\"id\":\"START-02-drive-request-enabled\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":15}\n{\"type\":\"assertion\",\"id\":\"START-03-grace-boundary\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":16}\n{\"type\":\"assertion\",\"id\":\"START-04-deadline\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":17}\n{\"type\":\"assertion\",\"id\":\"SPEED-01-confirmed-running\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_drive.c\",\"line\":18}\n{\"type\":\"assertion\",\"id\":\"SPEED-02-calculation-300-rpm\",\"passed\":true,\"expected\":300000,\"actual\":300000,\"source\":\"test_drive.c\",\"line\":19}\n{\"type\":\"assertion\",\"id\":\"SPEED-03-limit-equality-allowed\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_drive.c\",\"line\":20}\n{\"type\":\"assertion\",\"id\":\"SPEED-04-calculation-600-rpm\",\"passed\":true,\"expected\":600000,\"actual\":600000,\"source\":\"test_drive.c\",\"line\":21}\n{\"type\":\"assertion\",\"id\":\"SPEED-05-overspeed-detected\",\"passed\":false,\"expected\":3,\"actual\":0,\"source\":\"test_drive.c\",\"line\":22}\n{\"type\":\"assertion\",\"id\":\"SPEED-06-fault-disables-drive\",\"passed\":false,\"expected\":0,\"actual\":1,\"source\":\"test_drive.c\",\"line\":23}\n{\"type\":\"assertion\",\"id\":\"SPEED-07-exact-scaled-comparison\",\"passed\":false,\"expected\":1,\"actual\":0,\"source\":\"test_drive.c\",\"line\":24}\n{\"type\":\"assertion\",\"id\":\"TIME-01-100ms-boundary\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_drive.c\",\"line\":25}\n{\"type\":\"assertion\",\"id\":\"TIME-02-late-sample-cannot-hide-gap\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_drive.c\",\"line\":26}\n{\"type\":\"assertion\",\"id\":\"TIME-03-stale-speed-labelled\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":27}\n{\"type\":\"assertion\",\"id\":\"TIME-04-no-new-pulses\",\"passed\":true,\"expected\":3,\"actual\":3,\"source\":\"test_drive.c\",\"line\":28}\n{\"type\":\"assertion\",\"id\":\"FAULT-01-overspeed-before-stop\",\"passed\":false,\"expected\":3,\"actual\":0,\"source\":\"test_drive.c\",\"line\":29}\n{\"type\":\"assertion\",\"id\":\"FAULT-02-start-does-not-clear-latch\",\"passed\":true,\"expected\":3,\"actual\":3,\"source\":\"test_drive.c\",\"line\":31}\n{\"type\":\"assertion\",\"id\":\"RESET-01-moving-feedback-rejected\",\"passed\":true,\"expected\":3,\"actual\":3,\"source\":\"test_drive.c\",\"line\":32}\n{\"type\":\"assertion\",\"id\":\"RESET-02-stationary-reset-ready\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":33}\n{\"type\":\"assertion\",\"id\":\"RESET-03-reset-not-start\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":34}\n{\"type\":\"assertion\",\"id\":\"RESET-04-new-start-needs-new-pulses\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":35}\n{\"type\":\"assertion\",\"id\":\"STOP-01-controller-ready\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":36}\n{\"type\":\"assertion\",\"id\":\"STOP-02-drive-off\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":37}\n{\"type\":\"assertion\",\"id\":\"INPUT-01-decreasing-time-rejected\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":38}\n{\"type\":\"assertion\",\"id\":\"INPUT-02-invalid-time-immutable\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":39}\n{\"type\":\"assertion\",\"id\":\"INPUT-03-same-time-count-rejected\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_drive.c\",\"line\":40}\n{\"type\":\"assertion\",\"id\":\"INPUT-04-invalid-sample-immutable\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":41}\n{\"type\":\"assertion\",\"id\":\"COUNTER-01-single-wrap-delta\",\"passed\":true,\"expected\":10,\"actual\":10,\"source\":\"test_drive.c\",\"line\":43}\n{\"type\":\"assertion\",\"id\":\"COUNTER-02-wrap-speed\",\"passed\":true,\"expected\":300000,\"actual\":300000,\"source\":\"test_drive.c\",\"line\":43}\n{\"type\":\"assertion\",\"id\":\"READY-01-no-motion-is-not-fault\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":44}\n{\"type\":\"assertion\",\"id\":\"START-05-repeat-start-cannot-extend-deadline\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":46}\n{\"type\":\"test_summary\",\"executed\":31,\"passed\":27,\"failed\":4}\n\ntest 2\n    Start 2: plc_handshake_contracts\n\n2: Test command: [recorded-run]/build/plc_tests\n2: Working Directory: [recorded-run]/build\n2: Test timeout computed to be: 10000000\n2: {\"type\":\"assertion\",\"id\":\"PLC-01-start-command\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_sequence.c\",\"line\":8}\n2: {\"type\":\"assertion\",\"id\":\"PLC-02-start-is-not-running\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_sequence.c\",\"line\":9}\n2: {\"type\":\"assertion\",\"id\":\"PLC-03-await-running-ack\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_sequence.c\",\"line\":10}\n2: {\"type\":\"assertion\",\"id\":\"PLC-04-running-confirmed\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_sequence.c\",\"line\":11}\n2: {\"type\":\"assertion\",\"id\":\"PLC-05-controller-fault\",\"passed\":true,\"expected\":3,\"actual\":3,\"source\":\"test_sequence.c\",\"line\":12}\n2: {\"type\":\"assertion\",\"id\":\"PLC-06-fault-blocks-start\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_sequence.c\",\"line\":13}\n2: {\"type\":\"assertion\",\"id\":\"PLC-07-reset-command\",\"passed\":true,\"expected\":3,\"actual\":3,\"source\":\"test_sequence.c\",\"line\":14}\n2: {\"type\":\"assertion\",\"id\":\"PLC-08-ready-after-confirmed-reset\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_sequence.c\",\"line\":15}\n2: {\"type\":\"assertion\",\"id\":\"PLC-09-ack-deadline-boundary\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_sequence.c\",\"line\":17}\n2: {\"type\":\"assertion\",\"id\":\"PLC-10-timeout-stop-request\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_sequence.c\",\"line\":18}\n2: {\"type\":\"assertion\",\"id\":\"PLC-11-timeout-fault\",\"passed\":true,\"expected\":3,\"actual\":3,\"source\":\"test_sequence.c\",\"line\":19}\n2: {\"type\":\"assertion\",\"id\":\"PLC-12-timeout-reason\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_sequence.c\",\"line\":19}\n2: {\"type\":\"assertion\",\"id\":\"PLC-13-stop-priority\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_sequence.c\",\"line\":20}\n2: {\"type\":\"assertion\",\"id\":\"PLC-14-no-start-if-C-not-ready\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_sequence.c\",\"line\":21}\n2: {\"type\":\"test_summary\",\"executed\":14,\"passed\":14,\"failed\":0}\n2/2 Test #2: plc_handshake_contracts ..........   Passed    0.00 sec\n\n50% tests passed, 1 tests failed out of 2\n\nTotal Test time (real) =   0.01 sec\n\nThe following tests FAILED:\n\t  1 - encoder_contracts (Failed)\nErrors while running CTest\n",
+      "verified_artifacts": 61
+    },
+    {
+      "run_id": "ee4976b5d4ae457384af57bf8ab76cae",
+      "status": "PASS",
+      "counts": {
+        "executed": 45,
+        "passed": 45,
+        "failed": 0
+      },
+      "source_report_sha256": "eceef190ab035229b96e58dd7361b5e336dc004158a7ba49ce022f6e6035579e",
+      "content_sha256": "d15b44bcc2f5ce9b5effcbb295cf851571af0a9446227d06bb1d84afcc07d848",
+      "source_base_commit": "aa76470b3a7df1a36b23494740870ed969700139",
+      "source_uncommitted": true,
+      "source_sha256": {
+        "test_drive.c": "a90674780fcde846ffd097fbbfa7df188d15974ec4bddbd7e4fda5e97476dea1",
+        "controller.c": "2b09fefc193c3ae1f30fb34086c91a3355b63d6643530e9bdebc66efcb909cfa",
+        "plc_wrapper.c": "555f72e13031a07ce31cfdc1c4905a0673d16c3a602fe28557cf0a2e740529ad",
+        "drive_controller.c": "1e9dc340e1a1a02312fdfc7a8bc95f0449098c858593d6d8ce4af0afd560f733",
+        "main.c": "34d0e4ae600a210b2e293b8c0ce2a4a4ec5a1bf5cac3ef27a3ba6b6251f78ec2",
+        "operator_sequence.st": "a5f52080aa23ada3d6d2cdd2261807d61db3f738c9a1bd1d9fa8d43270c8178b",
+        "plc-toolchain.json": "f4bb2da8d93bc0b3506cffca21bfbe6feda2a48e476cf34d5fd07d819a66721a",
+        "test_controller.c": "95349a7f3c140d12d8d7ae78bc4238eedd26890b6783deadf3c882d2add61f45",
+        "drive_probe.c": "b91d9521240c9c0d812dbe9429149c2b934c15269ca3e90b678dc03c147dd580",
+        "drive_controller.h": "8739d5781617221cd716df74052b4f5dfd375c0a160c51cc3e720e46d2a2f0fa",
+        "speed_policy.c": "2f69c9ba30933f80f9c3264f6901705d24e0424423824bb1700c400592521f78",
+        "encoder_main.c": "17de611e6edf8130be87cd9b8c7b728e512e4d21bda697e7ba1d23cbb1eff5c9",
+        "CMakeLists.txt": "0b31d3c227c8cbf93fc3d5088194fdc7fb0d9171da7f00530f6eaf8e6b3e6acf",
+        "plc_interface.h": "b7cae7416baeaab07931676d9a6ba3f6ea51c4c3336b9e8ba6b8d8a68895d724",
+        "test_sequence.c": "d27fd13d3453fb006d1e9b4306d5d4bc63bd0aa021ea734744202fd6ff1afa72",
+        "controller.h": "b1c059f0b485445fbd2b4d72615b0ba4f112324dead917b3e7fd7998915e215d",
+        "plc_generated/LOCATED_VARIABLES.h": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "plc_generated/POUS.h": "fd81552ddc91b55fc4aada51632ae7bc0c714ccca1a4a0a1e8fa87c6f07a7466",
+        "plc_generated/POUS.c": "9becbcda6c7e4877048b4c2b11b0a4ea9a3bdaaffb579ad889757f542b6f62e2",
+        "plc_generated/GLOBALS.h": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "assertions": [
+        {
+          "type": "assertion",
+          "id": "START-01-grace-not-running",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_drive.c",
+          "line": 14
+        },
+        {
+          "type": "assertion",
+          "id": "START-02-drive-request-enabled",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_drive.c",
+          "line": 15
+        },
+        {
+          "type": "assertion",
+          "id": "START-03-grace-boundary",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_drive.c",
+          "line": 16
+        },
+        {
+          "type": "assertion",
+          "id": "START-04-deadline",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_drive.c",
+          "line": 17
+        },
+        {
+          "type": "assertion",
+          "id": "SPEED-01-confirmed-running",
+          "passed": true,
+          "expected": 2,
+          "actual": 2,
+          "source": "test_drive.c",
+          "line": 18
+        },
+        {
+          "type": "assertion",
+          "id": "SPEED-02-calculation-300-rpm",
+          "passed": true,
+          "expected": 300000,
+          "actual": 300000,
+          "source": "test_drive.c",
+          "line": 19
+        },
+        {
+          "type": "assertion",
+          "id": "SPEED-03-limit-equality-allowed",
+          "passed": true,
+          "expected": 2,
+          "actual": 2,
+          "source": "test_drive.c",
+          "line": 20
+        },
+        {
+          "type": "assertion",
+          "id": "SPEED-04-calculation-600-rpm",
+          "passed": true,
+          "expected": 600000,
+          "actual": 600000,
+          "source": "test_drive.c",
+          "line": 21
+        },
+        {
+          "type": "assertion",
+          "id": "SPEED-05-overspeed-detected",
+          "passed": true,
+          "expected": 3,
+          "actual": 3,
+          "source": "test_drive.c",
+          "line": 22
+        },
+        {
+          "type": "assertion",
+          "id": "SPEED-06-fault-disables-drive",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 23
+        },
+        {
+          "type": "assertion",
+          "id": "SPEED-07-exact-scaled-comparison",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_drive.c",
+          "line": 24
+        },
+        {
+          "type": "assertion",
+          "id": "TIME-01-100ms-boundary",
+          "passed": true,
+          "expected": 2,
+          "actual": 2,
+          "source": "test_drive.c",
+          "line": 25
+        },
+        {
+          "type": "assertion",
+          "id": "TIME-02-late-sample-cannot-hide-gap",
+          "passed": true,
+          "expected": 2,
+          "actual": 2,
+          "source": "test_drive.c",
+          "line": 26
+        },
+        {
+          "type": "assertion",
+          "id": "TIME-03-stale-speed-labelled",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 27
+        },
+        {
+          "type": "assertion",
+          "id": "TIME-04-no-new-pulses",
+          "passed": true,
+          "expected": 3,
+          "actual": 3,
+          "source": "test_drive.c",
+          "line": 28
+        },
+        {
+          "type": "assertion",
+          "id": "FAULT-01-overspeed-before-stop",
+          "passed": true,
+          "expected": 3,
+          "actual": 3,
+          "source": "test_drive.c",
+          "line": 29
+        },
+        {
+          "type": "assertion",
+          "id": "FAULT-02-start-does-not-clear-latch",
+          "passed": true,
+          "expected": 3,
+          "actual": 3,
+          "source": "test_drive.c",
+          "line": 31
+        },
+        {
+          "type": "assertion",
+          "id": "RESET-01-moving-feedback-rejected",
+          "passed": true,
+          "expected": 3,
+          "actual": 3,
+          "source": "test_drive.c",
+          "line": 32
+        },
+        {
+          "type": "assertion",
+          "id": "RESET-02-stationary-reset-ready",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 33
+        },
+        {
+          "type": "assertion",
+          "id": "RESET-03-reset-not-start",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 34
+        },
+        {
+          "type": "assertion",
+          "id": "RESET-04-new-start-needs-new-pulses",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_drive.c",
+          "line": 35
+        },
+        {
+          "type": "assertion",
+          "id": "STOP-01-controller-ready",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 36
+        },
+        {
+          "type": "assertion",
+          "id": "STOP-02-drive-off",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 37
+        },
+        {
+          "type": "assertion",
+          "id": "INPUT-01-decreasing-time-rejected",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_drive.c",
+          "line": 38
+        },
+        {
+          "type": "assertion",
+          "id": "INPUT-02-invalid-time-immutable",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 39
+        },
+        {
+          "type": "assertion",
+          "id": "INPUT-03-same-time-count-rejected",
+          "passed": true,
+          "expected": 2,
+          "actual": 2,
+          "source": "test_drive.c",
+          "line": 40
+        },
+        {
+          "type": "assertion",
+          "id": "INPUT-04-invalid-sample-immutable",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 41
+        },
+        {
+          "type": "assertion",
+          "id": "COUNTER-01-single-wrap-delta",
+          "passed": true,
+          "expected": 10,
+          "actual": 10,
+          "source": "test_drive.c",
+          "line": 43
+        },
+        {
+          "type": "assertion",
+          "id": "COUNTER-02-wrap-speed",
+          "passed": true,
+          "expected": 300000,
+          "actual": 300000,
+          "source": "test_drive.c",
+          "line": 43
+        },
+        {
+          "type": "assertion",
+          "id": "READY-01-no-motion-is-not-fault",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_drive.c",
+          "line": 44
+        },
+        {
+          "type": "assertion",
+          "id": "START-05-repeat-start-cannot-extend-deadline",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_drive.c",
+          "line": 46
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-01-start-command",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_sequence.c",
+          "line": 8
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-02-start-is-not-running",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_sequence.c",
+          "line": 9
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-03-await-running-ack",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_sequence.c",
+          "line": 10
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-04-running-confirmed",
+          "passed": true,
+          "expected": 2,
+          "actual": 2,
+          "source": "test_sequence.c",
+          "line": 11
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-05-controller-fault",
+          "passed": true,
+          "expected": 3,
+          "actual": 3,
+          "source": "test_sequence.c",
+          "line": 12
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-06-fault-blocks-start",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_sequence.c",
+          "line": 13
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-07-reset-command",
+          "passed": true,
+          "expected": 3,
+          "actual": 3,
+          "source": "test_sequence.c",
+          "line": 14
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-08-ready-after-confirmed-reset",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_sequence.c",
+          "line": 15
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-09-ack-deadline-boundary",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_sequence.c",
+          "line": 17
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-10-timeout-stop-request",
+          "passed": true,
+          "expected": 2,
+          "actual": 2,
+          "source": "test_sequence.c",
+          "line": 18
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-11-timeout-fault",
+          "passed": true,
+          "expected": 3,
+          "actual": 3,
+          "source": "test_sequence.c",
+          "line": 19
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-12-timeout-reason",
+          "passed": true,
+          "expected": 1,
+          "actual": 1,
+          "source": "test_sequence.c",
+          "line": 19
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-13-stop-priority",
+          "passed": true,
+          "expected": 2,
+          "actual": 2,
+          "source": "test_sequence.c",
+          "line": 20
+        },
+        {
+          "type": "assertion",
+          "id": "PLC-14-no-start-if-C-not-ready",
+          "passed": true,
+          "expected": 0,
+          "actual": 0,
+          "source": "test_sequence.c",
+          "line": 21
+        }
+      ],
+      "process_results": [
+        {
+          "sequence": 7,
+          "elapsed_seconds": 0.0784,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "plc-compile.log"
+        },
+        {
+          "sequence": 24,
+          "elapsed_seconds": 1.2629,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "configure.log"
+        },
+        {
+          "sequence": 39,
+          "elapsed_seconds": 1.6011,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "build.log"
+        },
+        {
+          "sequence": 74,
+          "elapsed_seconds": 1.6025,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "assertions.log"
+        },
+        {
+          "sequence": 92,
+          "elapsed_seconds": 1.6037,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "plc-assertions.log"
+        },
+        {
+          "sequence": 95,
+          "elapsed_seconds": 1.6048,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "restart-probe.log"
+        },
+        {
+          "sequence": 173,
+          "elapsed_seconds": 1.617,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "ctest.log"
+        },
+        {
+          "sequence": 193,
+          "elapsed_seconds": 1.7171,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "cppcheck.xml"
+        },
+        {
+          "sequence": 198,
+          "elapsed_seconds": 1.7222,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "keygen.log"
+        },
+        {
+          "sequence": 200,
+          "elapsed_seconds": 1.7261,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "public-key.log"
+        },
+        {
+          "sequence": 202,
+          "elapsed_seconds": 1.7312,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "sign.log"
+        },
+        {
+          "sequence": 205,
+          "elapsed_seconds": 1.7351,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "signature-verification.log"
+        },
+        {
+          "sequence": 219,
+          "elapsed_seconds": 1.7365,
+          "type": "process_exit",
+          "exit_code": 0,
+          "log": "control-trace.log"
+        }
+      ],
+      "stage_states": {
+        "Build & Test": "passed",
+        "Cybersecurity": "passed",
+        "Control & Fault Handling": "passed",
+        "Quality Gate": "passed"
+      },
+      "source": "/* Demonstration shaft-speed limit; not a real escalator safety threshold. */\n#include <stdbool.h>\n#include <stdint.h>\nbool speed_exceeds_limit(uint64_t measured, uint64_t limit)\n{\n    /* Compare exact scaled values so rounding cannot hide an exceedance. */\n    return measured > limit;\n}\n",
+      "ctest_log": "[STARTED] CTest regression suites | executable: ctest\nInternal ctest changing into directory: [recorded-run]/build\nUpdateCTestConfiguration  from :[recorded-run]/build/DartConfiguration.tcl\nUpdateCTestConfiguration  from :[recorded-run]/build/DartConfiguration.tcl\nTest project [recorded-run]/build\nConstructing a list of tests\nDone constructing a list of tests\nUpdating test list for fixtures\nAdded 0 tests to meet fixture requirements\nChecking test dependency graph...\nChecking test dependency graph end\ntest 1\n    Start 1: encoder_contracts\n\n1: Test command: [recorded-run]/build/controller_tests\n1: Working Directory: [recorded-run]/build\n1: Test timeout computed to be: 10000000\n1: {\"type\":\"assertion\",\"id\":\"START-01-grace-not-running\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":14}\n1: {\"type\":\"assertion\",\"id\":\"START-02-drive-request-enabled\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":15}\n1: {\"type\":\"assertion\",\"id\":\"START-03-grace-boundary\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":16}\n1: {\"type\":\"assertion\",\"id\":\"START-04-deadline\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":17}\n1: {\"type\":\"assertion\",\"id\":\"SPEED-01-confirmed-running\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_drive.c\",\"line\":18}\n1: {\"type\":\"assertion\",\"id\":\"SPEED-02-calculation-300-rpm\",\"passed\":true,\"expected\":300000,\"actual\":300000,\"source\":\"test_drive.c\",\"line\":19}\n1: {\"type\":\"assertion\",\"id\":\"SPEED-03-limit-equality-allowed\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_drive.c\",\"line\":20}\n1: {\"type\":\"assertion\",\"id\":\"SPEED-04-calculation-600-rpm\",\"passed\":true,\"expected\":600000,\"actual\":600000,\"source\":\"test_drive.c\",\"line\":21}\n1: {\"type\":\"assertion\",\"id\":\"SPEED-05-overspeed-detected\",\"passed\":true,\"expected\":3,\"actual\":3,\"source\":\"test_drive.c\",\"line\":22}\n1: {\"type\":\"assertion\",\"id\":\"SPEED-06-fault-disables-drive\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":23}\n1: {\"type\":\"assertion\",\"id\":\"SPEED-07-exact-scaled-comparison\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":24}\n1: {\"type\":\"assertion\",\"id\":\"TIME-01-100ms-boundary\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_drive.c\",\"line\":25}\n1: {\"type\":\"assertion\",\"id\":\"TIME-02-late-sample-cannot-hide-gap\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_drive.c\",\"line\":26}\n1: {\"type\":\"assertion\",\"id\":\"TIME-03-stale-speed-labelled\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":27}\n1: {\"type\":\"assertion\",\"id\":\"TIME-04-no-new-pulses\",\"passed\":true,\"expected\":3,\"actual\":3,\"source\":\"test_drive.c\",\"line\":28}\n1: {\"type\":\"assertion\",\"id\":\"FAULT-01-overspeed-before-stop\",\"passed\":true,\"expected\":3,\"actual\":3,\"source\":\"test_drive.c\",\"line\":29}\n1: {\"type\":\"assertion\",\"id\":\"FAULT-02-start-does-not-clear-latch\",\"passed\":true,\"expected\":3,\"actual\":3,\"source\":\"test_drive.c\",\"line\":31}\n1: {\"type\":\"assertion\",\"id\":\"RESET-01-moving-feedback-rejected\",\"passed\":true,\"expected\":3,\"actual\":3,\"source\":\"test_drive.c\",\"line\":32}\n1: {\"type\":\"assertion\",\"id\":\"RESET-02-stationary-reset-ready\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":33}\n1: {\"type\":\"assertion\",\"id\":\"RESET-03-reset-not-start\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":34}\n1: {\"type\":\"assertion\",\"id\":\"RESET-04-new-start-needs-new-pulses\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":35}\n1: {\"type\":\"assertion\",\"id\":\"STOP-01-controller-ready\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":36}\n1: {\"type\":\"assertion\",\"id\":\"STOP-02-drive-off\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":37}\n1: {\"type\":\"assertion\",\"id\":\"INPUT-01-decreasing-time-rejected\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":38}\n1: {\"type\":\"assertion\",\"id\":\"INPUT-02-invalid-time-immutable\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":39}\n1: {\"type\":\"assertion\",\"id\":\"INPUT-03-same-time-count-rejected\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_drive.c\",\"line\":40}\n1: {\"type\":\"assertion\",\"id\":\"INPUT-04-invalid-sample-immutable\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":41}\n1: {\"type\":\"assertion\",\"id\":\"COUNTER-01-single-wrap-delta\",\"passed\":true,\"expected\":10,\"actual\":10,\"source\":\"test_drive.c\",\"line\":43}\n1: {\"type\":\"assertion\",\"id\":\"COUNTER-02-wrap-speed\",\"passed\":true,\"expected\":300000,\"actual\":300000,\"source\":\"test_drive.c\",\"line\":43}\n1: {\"type\":\"assertion\",\"id\":\"READY-01-no-motion-is-not-fault\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_drive.c\",\"line\":44}\n1: {\"type\":\"assertion\",\"id\":\"START-05-repeat-start-cannot-extend-deadline\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_drive.c\",\"line\":46}\n1: {\"type\":\"test_summary\",\"executed\":31,\"passed\":31,\"failed\":0}\n1/2 Test #1: encoder_contracts ................   Passed    0.00 sec\ntest 2\n    Start 2: plc_handshake_contracts\n\n2: Test command: [recorded-run]/build/plc_tests\n2: Working Directory: [recorded-run]/build\n2: Test timeout computed to be: 10000000\n2: {\"type\":\"assertion\",\"id\":\"PLC-01-start-command\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_sequence.c\",\"line\":8}\n2: {\"type\":\"assertion\",\"id\":\"PLC-02-start-is-not-running\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_sequence.c\",\"line\":9}\n2: {\"type\":\"assertion\",\"id\":\"PLC-03-await-running-ack\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_sequence.c\",\"line\":10}\n2: {\"type\":\"assertion\",\"id\":\"PLC-04-running-confirmed\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_sequence.c\",\"line\":11}\n2: {\"type\":\"assertion\",\"id\":\"PLC-05-controller-fault\",\"passed\":true,\"expected\":3,\"actual\":3,\"source\":\"test_sequence.c\",\"line\":12}\n2: {\"type\":\"assertion\",\"id\":\"PLC-06-fault-blocks-start\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_sequence.c\",\"line\":13}\n2: {\"type\":\"assertion\",\"id\":\"PLC-07-reset-command\",\"passed\":true,\"expected\":3,\"actual\":3,\"source\":\"test_sequence.c\",\"line\":14}\n2: {\"type\":\"assertion\",\"id\":\"PLC-08-ready-after-confirmed-reset\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_sequence.c\",\"line\":15}\n2: {\"type\":\"assertion\",\"id\":\"PLC-09-ack-deadline-boundary\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_sequence.c\",\"line\":17}\n2: {\"type\":\"assertion\",\"id\":\"PLC-10-timeout-stop-request\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_sequence.c\",\"line\":18}\n2: {\"type\":\"assertion\",\"id\":\"PLC-11-timeout-fault\",\"passed\":true,\"expected\":3,\"actual\":3,\"source\":\"test_sequence.c\",\"line\":19}\n2: {\"type\":\"assertion\",\"id\":\"PLC-12-timeout-reason\",\"passed\":true,\"expected\":1,\"actual\":1,\"source\":\"test_sequence.c\",\"line\":19}\n2: {\"type\":\"assertion\",\"id\":\"PLC-13-stop-priority\",\"passed\":true,\"expected\":2,\"actual\":2,\"source\":\"test_sequence.c\",\"line\":20}\n2: {\"type\":\"assertion\",\"id\":\"PLC-14-no-start-if-C-not-ready\",\"passed\":true,\"expected\":0,\"actual\":0,\"source\":\"test_sequence.c\",\"line\":21}\n2: {\"type\":\"test_summary\",\"executed\":14,\"passed\":14,\"failed\":0}\n2/2 Test #2: plc_handshake_contracts ..........   Passed    0.00 sec\n\n100% tests passed, 0 tests failed out of 2\n\nTotal Test time (real) =   0.00 sec\n",
+      "verified_artifacts": 68
+    }
+  ]
+}
