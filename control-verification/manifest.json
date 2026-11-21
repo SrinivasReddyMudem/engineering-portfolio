@@ -4,9 +4,12 @@
   "evidence.json": "d4fdd14484f7e18b160a8f0fcca8f8862ecade112793bbb25d6205b97bac23c6",
   "fault-definitions.json": "9a6feea8f21488f6bb651ef674faccfdeeeb96dd620df37e7b5ee80b8815ef54",
   "four-panel-style.css": "73df050c419428bc1fe9e107d4032f50b193d1051a55c085fac8a4356d33a29c",
-  "index.html": "c3d3b6753bfa52b0678231008a80529148853a1c8c6bb6d1be78239a0029597c",
+  "index.html": "ea3d214915bacd8f6385108f20c714895ee22b5f709b9f92eb2c91f7842bdef5",
   "review.html": "f19e7c86ab345e43e5dc53ad4c65a1d909c8583041b9245d0e97cd831cc016c8",
   "review.md": "6da04425b115cfa9d47c8d2d1ce30295ae0192718e22624127b8625bcd2da639",
   "verification-evidence.json": "c7c6ca8a9ba8126808f3feea8e31cfbc1684680eec800aaccfed77769c640fa0",
-  "analytics.js": "2e88cb097874d701d2d6d139294a0531d458afc3c0a0a8edf5ac907aa8fd2d05"
+  "analytics.js": "2e88cb097874d701d2d6d139294a0531d458afc3c0a0a8edf5ac907aa8fd2d05",
+  "favicon.svg": "4895cbc79dd26f0f8ce92a0b50468c1e2342833f86546ded90c79fcd42a3e80c",
+  "favicon.ico": "a15f989b94a2e8553561f88cdd8a3d397a4b930821daf978b8ea137c6865f783",
+  "apple-touch-icon.png": "a47ba6279b7ff722ca9d3dbc6de0e06398e1181f1ca09779010bca433b6358a2"
 }
